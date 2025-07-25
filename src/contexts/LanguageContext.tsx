@@ -227,7 +227,7 @@ const translations: Translations = {
   'footer.newsletter.description': { en: 'Get the latest automation insights and product updates delivered to your inbox.', he: 'קבלו את התובנות האחרונות על אוטומציה ועדכוני מוצר ישירות לתיבת הדואר שלכם.' },
   'footer.newsletter.placeholder': { en: 'Enter your email', he: 'הכניסו את האימייל שלכם' },
   'footer.newsletter.subscribe': { en: 'Subscribe', he: 'הירשמו' },
-  'footer.copyright': { en: '© 2025 HOLYLABS Ltd All rights reserved.', he: '© 2025 HOLYLABS Ltd כל הזכויות שמורות.' },
+  'footer.copyright': { en: '© 2025 Holylabs Ltd All rights reserved.', he: '© 2025 Holylabs Ltd כל הזכויות שמורות.' },
   'footer.made': { en: 'Made with ❤️ for growing businesses', he: 'נוצר באהבה ❤️ לעסקים צומחים' },
   'footer.status': { en: 'All systems operational', he: 'כל המערכות פעילות' },
 
