@@ -1,0 +1,33 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    // Blog posts - public read for published, allow server-side writes
+    match /blogs/{blogId} {
+      // Allow public read access to published blogs
+      allow read: if resource.data.published == true;
+      
+      // Allow authenticated users to read all blogs (including drafts)
+      allow read: if request.auth != null;
+      
+      // Allow authenticated users to create, update, and delete blogs
+      allow create, update, delete: if request.auth != null;
+      
+      // Allow server-side API to create blogs (for automation/AI)
+      allow create: if true;
+    }
+    
+    // Contacts - allow creation by anyone, read/update/delete by authenticated users
+    match /contacts/{contactId} {
+      // Allow anyone to create contact entries (from contact form)
+      allow create: if true;
+      
+      // Allow authenticated users to read, update, and delete contacts
+      allow read, update, delete: if request.auth != null;
+    }
+    
+    // Default rule - deny all other access
+    match /{document=**} {
+      allow read, write: if false;
+    }
+  }
+} 

@@ -1,0 +1,16 @@
+User-agent: *
+Allow: /
+
+# Allow favicon and logo files
+Allow: /logo.svg
+Allow: /favicon.ico
+Allow: /browserconfig.xml
+
+# Sitemap location
+Sitemap: https://www.theholylabs.com/sitemap.xml
+
+# Crawl delay (optional)
+Crawl-delay: 1
+
+# Disallow admin area
+Disallow: /admin 
