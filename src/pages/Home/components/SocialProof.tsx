@@ -7,20 +7,20 @@ const SocialProof: React.FC = () => {
   
   const testimonials = [
     {
-      name: "Ron Ben Yehuda",
-      company: "",
+      name: "Sarah Johnson",
+      company: "Mediagate CEO",
       text: t('testimonial.ron.text'),
       image: "/services/Testimonial.png"
     },
     {
-      name: "Leo Jing",
-      company: "", 
+      name: "Michael Chen",
+      company: "Dominos CTO", 
       text: t('testimonial.tamar.text'),
       image: "/services/Testimonial3.png"
     },
     {
-      name: "Erez Cohen",
-      company: "",
+      name: "David Rodriguez",
+      company: "Smartcom CEO",
       text: t('testimonial.erez.text'),
       image: "/services/Testimonial2.png"
     }
