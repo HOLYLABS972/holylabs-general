@@ -99,7 +99,7 @@ const translations: Translations = {
 
   // Social Proof Section
   'social.badge': { en: 'Trusted by Innovators Worldwide', he: 'מהימן על ידי חדשנים ברחבי העולם' },
-  'social.title': { en: 'What Our <span style="font-style: italic; font-weight: 400; font-family: \'IBM Plex Serif\', serif;">Users</span> Say', he: 'מה המשתמשים שלנו אומרים' },
+  'social.title': { en: 'What Our <span style="font-style: italic; font-weight: 600; font-family: \'IBM Plex Serif\', serif;">Users</span> Say', he: 'מה המשתמשים שלנו אומרים' },
   'social.description': { en: 'Hear from businesses who\'ve transformed their workflows with our solutions', he: 'שמעו מעסקים ששינו את זרימות העבודה שלהם עם הפתרונות שלנו' },
   
   'social.trusted': { en: 'Trusted by', he: 'מהימן על ידי' },
@@ -193,7 +193,7 @@ const translations: Translations = {
 
   // FAQ Section
   'faq.badge': { en: 'FAQ', he: 'שאלות נפוצות' },
-  'faq.title': { en: 'Frequently Asked <span style="font-style: italic; font-weight: 400; font-family: \'IBM Plex Serif\', serif;">Questions</span>', he: 'שאלות <span style="font-style: italic; font-weight: 400; font-family: \'IBM Plex Serif\', serif;">נפוצות</span>' },
+  'faq.title': { en: 'Frequently Asked <span style="font-style: italic; font-weight: 600; font-family: \'IBM Plex Serif\', serif;">Questions</span>', he: 'שאלות <span style="font-style: italic; font-weight: 600; font-family: \'IBM Plex Serif\', serif;">נפוצות</span>' },
   'faq.description': { en: 'Find answers to common questions about HOLYLABS. Can\'t find what you\'re looking for? Contact our support team.', he: 'מצאו תשובות לשאלות נפוצות על הולי גרוז. לא מוצאים את מה שאתם מחפשים? צרו קשר עם צוות התמיכה שלנו.' },
 
   'faq.q1': { en: 'What is HOLYLABS and how does it work?', he: 'מה זה הולי גרוז ואיך זה עובד?' },
