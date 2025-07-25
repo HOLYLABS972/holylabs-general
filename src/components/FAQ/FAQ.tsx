@@ -61,20 +61,10 @@ export const FAQ = (): JSX.Element => {
               Frequently Asked Questions
             </span>
           </div>
-          <h2 className="text-4xl md:text-5xl text-center tracking-[-2.60px] leading-[71.5px] whitespace-pre-line bg-gradient-to-t from-black to-black/60 bg-clip-text text-transparent">
-            {t('faq.title').includes('\n') ? (
-              t('faq.title').split('\n').map((line, i) => (
-                <React.Fragment key={i}>
-                  {i === 0 ? line : <span style={{ fontStyle: 'italic', fontWeight: 400, fontFamily: '\'IBM Plex Serif\', serif' }}>{line}</span>}
-                  {i === 0 && '\n'}
-                </React.Fragment>
-              ))
-            ) : (
-              <>
-                Frequently Asked <span style={{ fontStyle: 'italic', fontWeight: 400, fontFamily: '\'IBM Plex Serif\', serif' }}>Questions</span>
-              </>
-            )}
-          </h2>
+          <h2 
+            className="text-4xl md:text-5xl text-center tracking-[-2.60px] leading-[71.5px] whitespace-pre-line bg-gradient-to-t from-black to-black/60 bg-clip-text text-transparent"
+            dangerouslySetInnerHTML={{ __html: t('faq.title') }}
+          />
           <p className="text-lg text-[#64646e] max-w-2xl mx-auto leading-relaxed">
             {t('faq.description')}
           </p>

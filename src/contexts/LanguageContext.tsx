@@ -193,7 +193,7 @@ const translations: Translations = {
 
   // FAQ Section
   'faq.badge': { en: 'FAQ', he: 'שאלות נפוצות' },
-  'faq.title': { en: 'Frequently Asked\nQuestions', he: 'שאלות\nנפוצות' },
+  'faq.title': { en: 'Frequently Asked <span style="font-style: italic; font-weight: 400; font-family: \'IBM Plex Serif\', serif;">Questions</span>', he: 'שאלות <span style="font-style: italic; font-weight: 400; font-family: \'IBM Plex Serif\', serif;">נפוצות</span>' },
   'faq.description': { en: 'Find answers to common questions about HOLYLABS. Can\'t find what you\'re looking for? Contact our support team.', he: 'מצאו תשובות לשאלות נפוצות על הולי גרוז. לא מוצאים את מה שאתם מחפשים? צרו קשר עם צוות התמיכה שלנו.' },
 
   'faq.q1': { en: 'What is HOLYLABS and how does it work?', he: 'מה זה הולי גרוז ואיך זה עובד?' },
