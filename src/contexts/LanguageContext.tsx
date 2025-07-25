@@ -99,7 +99,7 @@ const translations: Translations = {
 
   // Social Proof Section
   'social.badge': { en: 'Trusted by Innovators Worldwide', he: 'מהימן על ידי חדשנים ברחבי העולם' },
-  'social.title': { en: 'What Our <span style="font-style: italic; font-family: \'IBM Plex Serif\', serif;">Users</span> Say', he: 'מה המשתמשים שלנו אומרים' },
+  'social.title': { en: 'What Our Users Say', he: 'מה המשתמשים שלנו אומרים' },
   'social.description': { en: 'Hear from businesses who\'ve transformed their workflows with our solutions', he: 'שמעו מעסקים ששינו את זרימות העבודה שלהם עם הפתרונות שלנו' },
   
   'social.trusted': { en: 'Trusted by', he: 'מהימן על ידי' },
