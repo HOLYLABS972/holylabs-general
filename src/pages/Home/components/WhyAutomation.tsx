@@ -52,7 +52,7 @@ const WhyAutomation: React.FC = () => {
           <div className="inline-flex items-center justify-center gap-1 px-4 py-2 bg-white/60 backdrop-blur-sm rounded-full mb-6 border border-white/40">
             <span className="font-medium text-[#4f4f4f] text-sm">{t('whyautomation.badge')}</span>
           </div>
-          <h2 className="text-4xl md:text-5xl font-bold text-black mb-6 tracking-[-1.5px]">
+          <h2 className="text-4xl md:text-5xl font-bold text-black mb-6">
             {t('whyautomation.title')}
           </h2>
           <p className="text-lg text-[#64646e] max-w-3xl mx-auto leading-relaxed">
@@ -69,13 +69,13 @@ const WhyAutomation: React.FC = () => {
                     {benefit.icon}
                   </div>
                 </div>
-                <h3 className="text-xl font-semibold text-black mb-3 tracking-[-0.5px]">
+                <h3 className="text-xl font-semibold text-black mb-3">
                   {benefit.title}
                 </h3>
                 <p className="text-[#64646e] mb-4 leading-relaxed">
                   {benefit.description}
                 </p>
-                <div className="text-2xl font-bold text-black tracking-[-1px]">
+                <div className="text-2xl font-bold text-black">
                   {benefit.stat}
                 </div>
               </CardContent>

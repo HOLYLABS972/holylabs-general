@@ -117,7 +117,7 @@ const Contact: React.FC = () => {
       title: t('contact.telegram.title'),
       description: t('contact.telegram.description'),
       contact: "Telegram",
-      action: "https://t.me/theholylabs"
+      action: "https://t.me/holylabsbot"
     }
   ];
 

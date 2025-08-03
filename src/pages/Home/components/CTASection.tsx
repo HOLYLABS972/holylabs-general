@@ -24,7 +24,7 @@ const CTASection: React.FC = () => {
             <div className="inline-flex items-center justify-center gap-1 px-4 py-2 bg-white/20 backdrop-blur-sm rounded-full mb-6 border border-white/30">
               <span className="font-medium text-white text-sm">{t('cta.badge')}</span>
             </div>
-            <h2 className="text-4xl md:text-5xl font-bold mb-6 tracking-[-1.5px]">
+            <h2 className="text-4xl md:text-5xl font-bold mb-6">
               {t('cta.title')}
             </h2>
             <p className="text-xl md:text-2xl mb-8 opacity-90 leading-relaxed">
@@ -56,15 +56,15 @@ const CTASection: React.FC = () => {
             
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-center">
               <div className="bg-white/10 backdrop-blur-sm rounded-xl p-4 border border-white/20">
-                <div className="text-3xl font-bold mb-2 tracking-[-1px]">100%</div>
+                <div className="text-3xl font-bold mb-2">100%</div>
                 <div className="opacity-90">{t('cta.consultation')}</div>
               </div>
               <div className="bg-white/10 backdrop-blur-sm rounded-xl p-4 border border-white/20">
-                <div className="text-3xl font-bold mb-2 tracking-[-1px]">30 min</div>
+                <div className="text-3xl font-bold mb-2">30 min</div>
                 <div className="opacity-90">{t('cta.discovery')}</div>
               </div>
               <div className="bg-white/10 backdrop-blur-sm rounded-xl p-4 border border-white/20">
-                <div className="text-3xl font-bold mb-2 tracking-[-1px]">0</div>
+                <div className="text-3xl font-bold mb-2">0</div>
                 <div className="opacity-90">{t('cta.commitment')}</div>
               </div>
             </div>

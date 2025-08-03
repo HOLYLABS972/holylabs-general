@@ -37,11 +37,11 @@ export const Navbar = (): JSX.Element => {
             <Link to="/" className="flex flex-row items-center group">
               <img 
                 src="/logo.svg" 
-                alt="HOLYLABS" 
+                alt="HolyLabs" 
                 className="w-8 h-8 me-3 transition-transform duration-300 group-hover:rotate-90" 
               />
-              <span className="text-[23px] font-medium text-black tracking-[-0.69px]">
-                HOLYLABS
+              <span className="text-[23px] font-medium text-black">
+                HolyLabs
               </span>
             </Link>
           </div>  

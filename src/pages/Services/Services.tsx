@@ -389,7 +389,7 @@ const Services: React.FC = () => {
               </div>
             </div>
             
-            <h2 className="text-4xl md:text-5xl text-center tracking-[-2.60px] leading-[71.5px] whitespace-pre-line bg-gradient-to-t from-black to-black/60 bg-clip-text text-transparent mb-4">
+            <h2 className="text-4xl md:text-5xl text-center whitespace-pre-line text-black mb-4">
               {currentService.title}
             </h2>
             

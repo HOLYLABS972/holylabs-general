@@ -14,28 +14,28 @@ export const FAQ = (): JSX.Element => {
 
   const faqData: FAQItem[] = [
     {
-      question: t('faq.q1'),
-      answer: t('faq.a1')
+      question: t('faq.q1') as string,
+      answer: t('faq.a1') as string
     },
     {
-      question: t('faq.q2'),
-      answer: t('faq.a2')
+      question: t('faq.q2') as string,
+      answer: t('faq.a2') as string
     },
     {
-      question: t('faq.q3'),
-      answer: t('faq.a3')
+      question: t('faq.q3') as string,
+      answer: t('faq.a3') as string
     },
     {
-      question: t('faq.q4'),
-      answer: t('faq.a4')
+      question: t('faq.q4') as string,
+      answer: t('faq.a4') as string
     },
     {
-      question: t('faq.q5'),
-      answer: t('faq.a5')
+      question: t('faq.q5') as string,
+      answer: t('faq.a5') as string
     },
     {
-      question: t('faq.q6'),
-      answer: t('faq.a6')
+      question: t('faq.q6') as string,
+      answer: t('faq.a6') as string
     }
   ];
 
@@ -61,10 +61,9 @@ export const FAQ = (): JSX.Element => {
               Frequently Asked Questions
             </span>
           </div>
-          <h2 
-            className="text-4xl md:text-5xl text-center tracking-[-2.60px] leading-[71.5px] whitespace-pre-line bg-gradient-to-t from-black to-black/60 bg-clip-text text-transparent"
-            dangerouslySetInnerHTML={{ __html: t('faq.title') }}
-          />
+          <h2 className="text-4xl md:text-5xl text-center whitespace-pre-line text-black">
+            {t('faq.title')}
+          </h2>
           <p className="text-lg text-[#64646e] max-w-2xl mx-auto leading-relaxed">
             {t('faq.description')}
           </p>

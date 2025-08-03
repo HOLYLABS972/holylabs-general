@@ -5,7 +5,7 @@ export type Language = 'en' | 'he';
 interface LanguageContextType {
   language: Language;
   setLanguage: (lang: Language) => void;
-  t: (key: string) => string;
+  t: (key: string) => string | React.ReactNode;
 }
 
 const LanguageContext = createContext<LanguageContextType | undefined>(undefined);
@@ -28,8 +28,8 @@ const translations: Translations = {
 
   // Hero Section
   'hero.badge': { en: 'AI-Powered Business Automation', he: 'אוטומציה עסקית מבוססת בינה מלאכותית' },
-  'hero.title': { en: 'Automate Your Business', he: 'הפוך את העסק שלך לאוטומטי' },
-  'hero.subtitle': { en: 'Transform your business with AI-powered chatbots, automated calls,\nand smart booking systems that work 24/7 to grow your revenue.', he: 'שנה את העסק שלך עם צ\'אטבוטים מבוססי בינה מלאכותית, שיחות אוטומטיות,\nומערכות הזמנה חכמות שעובדות 24/7 כדי להגדיל את ההכנסות שלך.' },
+  'hero.title': { en: 'Automate Your Business', he: 'אוטומציה להעסק שלך' },
+  'hero.subtitle': { en: 'Transform your <span class="text-black"> business with AI</span>-powered chatbots, automated calls,\nand smart booking systems that work 24/7 to <span class="text-black">  grow your revenue.</span>', he: 'הפכו את העסק שלכם למוצלח בעזרת צ׳אטבותים המופעלים על ידי בינה מלאכותית, שיחות אוטומטיות ומערכות הזמנות חכמות שעובדות 24/7 כדי להגדיל את ההכנסות שלכם.' },
   'hero.cta.primary': { en: 'Call Now', he: 'התקשר עכשיו' },
   'hero.cta.secondary': { en: 'Explore Services', he: 'סיור בשירותים' },
 
@@ -39,8 +39,8 @@ const translations: Translations = {
   'services.description': { en: 'Transform your business with AI-powered automation solutions designed for modern SMBs', he: 'שנה את העסק שלך עם פתרונות אוטומציה מבוססי בינה מלאכותית המיועדים לחברות קטנות ובינוניות מודרניות' },
   
   // Services Items
-  'services.whatsapp.title': { en: 'AI WhatsApp Receptionists', he: 'פקידי קבלה של בינה מלאכותית בוואטסאפ' },
-  'services.whatsapp.description': { en: 'Intelligent virtual receptionists that handle customer inquiries on WhatsApp 24/7 with natural conversations', he: 'פקידי קבלה וירטואליים חכמים המטפלים בפניות לקוחות בוואטסאפ 24/7 עם שיחות טבעיות' },
+  'services.whatsapp.title': { en: 'AI Chatbots', he: 'פקידי קבלה של בינה מלאכותית' },
+  'services.whatsapp.description': { en: '<span class="text-black">Intelligent virtual receptionists</span> that handle customer inquiries <span class="text-black">on any messaging app</span> 24/7 with natural conversations', he: 'פקידי קבלה וירטואליים חכמים המטפלים בפניות לקוחות בכל יישום הודעה 24/7 עם שיחות טבעיות' },
   
   'services.calls.title': { en: 'AI Booking & Order Calls', he: 'שיחות הזמנה ובקשות של בינה מלאכותית' },
   'services.calls.description': { en: 'Automated calling systems that handle bookings, orders, and customer service calls with human-like interaction', he: 'מערכות שיחה אוטומטיות המטפלות בהזמנות, בקשות ושיחות שירות לקוחות עם אינטראקציה דמוית אדם' },
@@ -541,8 +541,17 @@ export const LanguageProvider: React.FC<{ children: ReactNode }> = ({ children }
     }
   };
 
-  const t = (key: string): string => {
-    return translations[key]?.[language] || key;
+  const t = (key: string): string | React.ReactNode => {
+    const translation = translations[key]?.[language];
+
+    if (translation) {
+      // Simple regex to check for common HTML tags (e.g., <span, <div, <p, <br, etc.)
+      const containsHtml = /<[a-z][\s\S]*>/i.test(translation);
+      if (containsHtml) {
+        return <span dangerouslySetInnerHTML={{ __html: translation }} />;
+      }
+    }
+    return translation || key;
   };
 
   return (

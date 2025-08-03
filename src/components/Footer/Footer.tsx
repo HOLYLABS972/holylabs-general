@@ -40,9 +40,9 @@ export const Footer = (): JSX.Element => {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {/* Brand Section */}
             <div className="lg:col-span-2">
-              <div className="flex flex-row items-center mb-6 text-white text-2xl font-light tracking-[-0.6px]">
-                <img src="/logo.svg" alt="HOLYLABS" className="w-10 h-10 me-2 brightness-0 invert" />
-                HOLYLABS
+              <div className="flex flex-row items-center mb-6 text-white text-2xl font-light">
+                <img src="/logo.svg" alt="HolyLabs" className="w-10 h-10 me-2 brightness-0 invert" />
+                HolyLabs
               </div>
               <p className="text-white/60 mb-6 leading-relaxed max-w-sm">
                 {t('footer.tagline')}

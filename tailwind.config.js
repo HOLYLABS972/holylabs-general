@@ -48,6 +48,7 @@ module.exports = {
       },
       fontFamily: {
         sans: [
+          "SF Pro Rounded",
           "ui-sans-serif",
           "system-ui",
           "sans-serif",

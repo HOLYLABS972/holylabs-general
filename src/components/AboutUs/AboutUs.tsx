@@ -46,7 +46,7 @@ export const AboutUs = (): JSX.Element => {
           <div className="inline-flex items-center justify-center gap-1 px-4 py-2 bg-white/60 backdrop-blur-sm rounded-full mb-6 border border-white/40">
             <span className="font-medium text-[#4f4f4f] text-sm">{t('about.badge')}</span>
           </div>
-          <h2 className="text-4xl md:text-5xl font-bold text-black mb-6 tracking-[-1.5px] whitespace-pre-line">
+          <h2 className="text-4xl md:text-5xl font-bold text-black mb-6  whitespace-pre-line">
             {t('about.title')}
           </h2>
           <p className="text-lg text-[#64646e] max-w-3xl mx-auto leading-relaxed">
@@ -58,7 +58,7 @@ export const AboutUs = (): JSX.Element => {
         <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mb-20">
           {stats.map((stat, index) => (
             <div key={index} className="text-center">
-              <div className="text-3xl md:text-4xl font-bold text-black mb-2 tracking-[-1px]">
+              <div className="text-3xl md:text-4xl font-bold text-black mb-2">
                 {stat.number}
               </div>
               <div className="text-[#64646e] font-medium">
@@ -71,7 +71,7 @@ export const AboutUs = (): JSX.Element => {
         {/* Features Grid */}
         <div className="grid md:grid-cols-2 gap-12 items-center mb-20">
           <div>
-            <h3 className="text-3xl font-bold text-black mb-6 tracking-[-1px]">
+            <h3 className="text-3xl font-bold text-black mb-6">
               Why Choose HOLYLABS?
             </h3>
             <p className="text-[#64646e] mb-8 text-lg leading-relaxed">
@@ -138,7 +138,7 @@ export const AboutUs = (): JSX.Element => {
         {/* Mission Statement */}
         <Card className="bg-white/50 backdrop-blur-sm text-black rounded-2xl overflow-hidden border border-white/40">
           <CardContent className="p-12 text-center">
-            <h3 className="text-3xl font-bold mb-6 tracking-[-1px]">
+            <h3 className="text-3xl font-bold mb-6">
               {t('about.mission.title')}
             </h3>
             <p className="text-xl leading-relaxed max-w-4xl mx-auto text-[#64646e]">

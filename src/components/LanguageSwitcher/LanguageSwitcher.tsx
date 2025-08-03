@@ -43,8 +43,10 @@ export const LanguageSwitcher: React.FC = () => {
         className="transition-all duration-200 w-auto aspect-square"
         title="Select Language"
       >
-        <Globe className="w-5 h-5 ml-2" />
-        <ChevronDown className={`w-4 h-4 mr-2 transition-transform duration-200 ${isOpen ? 'rotate-180' : ''}`} />
+        <div className="flex items-center px-2 gap-2">
+          <Globe className="w-5 h-5" />
+          <ChevronDown className={`w-4 h-4 transition-transform duration-200 ${isOpen ? 'rotate-180' : ''}`} />
+        </div>
       </Button>
 
       {isOpen && (

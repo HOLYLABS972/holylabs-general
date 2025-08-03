@@ -54,10 +54,9 @@ const ComprehensiveInsights: React.FC = () => {
               {t('insights.badge')}
             </span>
           </div>
-          <h2 
-            className="text-4xl md:text-5xl text-center tracking-[-2.60px] leading-[71.5px] whitespace-pre-line bg-gradient-to-t from-black to-black/60 bg-clip-text text-transparent"
-            dangerouslySetInnerHTML={{ __html: t('insights.title') }}
-          />
+          <h2 className="text-4xl md:text-5xl text-center whitespace-pre-line text-black">
+            {t('insights.title')}
+          </h2>
           <p className="text-lg text-[#64646e] max-w-3xl mx-auto leading-relaxed">
             {t('insights.description')}
           </p>

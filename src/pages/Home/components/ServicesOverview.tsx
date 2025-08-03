@@ -1,8 +1,8 @@
-import React from 'react';
+import React, { forwardRef } from 'react';
 import { BotIcon, PhoneIcon, CalendarIcon, MessageSquareIcon, CloudUploadIcon, UsersIcon, LinkIcon, TrendingUpIcon, MegaphoneIcon, GlobeIcon, SearchIcon } from 'lucide-react';
 import { useLanguage } from '../../../contexts/LanguageContext';
 
-const ServicesOverview: React.FC = () => {
+const ServicesOverview = forwardRef<HTMLDivElement>((props, ref) => {
   const { t } = useLanguage();
 
   const services = [
@@ -60,7 +60,7 @@ const ServicesOverview: React.FC = () => {
   ];
 
   return (
-    <section className="py-20 bg-[#FBFCFF] relative overflow-hidden">
+    <section ref={ref} className="py-20 bg-[#FBFCFF] relative overflow-hidden">
       {/* Grain effect overlay */}
       <div 
         className="absolute inset-0 opacity-[0.20] pointer-events-none -z-10"
@@ -82,10 +82,9 @@ const ServicesOverview: React.FC = () => {
           </div>
 
           {/* Main Title */}
-          <h2 
-            className="text-4xl md:text-5xl text-center tracking-[-2.60px] leading-[71.5px] whitespace-pre-line bg-gradient-to-t from-black to-black/60 bg-clip-text text-transparent"
-            dangerouslySetInnerHTML={{ __html: t('services.title') }}
-          />
+          <h2 className="text-4xl md:text-5xl text-center whitespace-pre-line text-black">
+            {t('services.title')}
+          </h2>
           
           {/* Description */}
           <p className="text-lg text-[#64646e] max-w-3xl mx-auto leading-relaxed">
@@ -123,7 +122,7 @@ const ServicesOverview: React.FC = () => {
                       </div>
                     </div>
                     <div className="flex flex-col justify-start flex-shrink-0 mb-3">
-                      <h4 className="text-xl font-semibold text-black tracking-[-0.5px]">
+                      <h4 className="text-xl font-semibold text-black">
                         {service.title}
                       </h4>
                     </div>
@@ -169,7 +168,7 @@ const ServicesOverview: React.FC = () => {
                       </div>
                     </div>
                     <div className="flex flex-col justify-start flex-shrink-0 mb-3">
-                      <h4 className="text-xl font-semibold text-black tracking-[-0.5px]">
+                      <h4 className="text-xl font-semibold text-black">
                         {service.title}
                       </h4>
                     </div>
@@ -225,6 +224,6 @@ const ServicesOverview: React.FC = () => {
       </div>
     </section>
   );
-};
+});
 
 export default ServicesOverview; 
