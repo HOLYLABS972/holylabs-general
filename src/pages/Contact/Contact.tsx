@@ -1,15 +1,11 @@
 import React, { useState } from 'react';
 import { 
-  MailIcon, 
   PhoneIcon, 
-  MapPinIcon, 
-  ClockIcon, 
   SendIcon, 
   MessageSquareIcon,
-  CalendarIcon,
-  ArrowRightIcon,
   CheckIcon,
-  LoaderIcon
+  LoaderIcon,
+  XIcon
 } from 'lucide-react';
 import { Button } from '../../components/ui/button';
 import { useLanguage } from '../../contexts/LanguageContext';
@@ -17,7 +13,7 @@ import { db } from '../../lib/firebase';
 import { collection, addDoc, serverTimestamp } from 'firebase/firestore';
 
 const Contact: React.FC = () => {
-  const { t } = useLanguage();
+  const { t, tString } = useLanguage();
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -28,6 +24,7 @@ const Contact: React.FC = () => {
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle');
+  const [showFormPopup, setShowFormPopup] = useState(false);
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     const { name, value } = e.target;
@@ -78,6 +75,10 @@ const Contact: React.FC = () => {
           service: '',
           message: ''
         });
+        setTimeout(() => {
+          setShowFormPopup(false);
+          setSubmitStatus('idle');
+        }, 2000);
       } else {
         setSubmitStatus('error');
       }
@@ -93,8 +94,6 @@ const Contact: React.FC = () => {
     {
       icon: <PhoneIcon className="w-6 h-6" />,
       title: t('contact.call.title'),
-      description: t('contact.call.description'),
-      contact: "+1 (236) 234-4580",
       action: "tel:+12362344580"
     },
     {
@@ -104,8 +103,6 @@ const Contact: React.FC = () => {
         </svg>
       ),
       title: t('contact.whatsapp.title'),
-      description: t('contact.whatsapp.description'),
-      contact: "WhatsApp",
       action: "https://wa.me/12362344580"
     },
     {
@@ -115,22 +112,23 @@ const Contact: React.FC = () => {
         </svg>
       ),
       title: t('contact.telegram.title'),
-      description: t('contact.telegram.description'),
-      contact: "Telegram",
       action: "https://t.me/holylabsbot"
+    },
+    {
+      icon: <MessageSquareIcon className="w-6 h-6" />,
+      title: t('contact.form.title'),
+      action: () => setShowFormPopup(true)
     }
   ];
 
-
-
   const serviceOptions = [
-    t('contact.service.whatsapp'),
-    t('contact.service.calls'),
-    t('contact.service.leads'),
-    t('contact.service.ads'),
-    t('contact.service.web'),
-    t('contact.service.custom'),
-    t('contact.service.general')
+    tString('contact.service.whatsapp'),
+    tString('contact.service.calls'),
+    tString('contact.service.leads'),
+    tString('contact.service.ads'),
+    tString('contact.service.web'),
+    tString('contact.service.custom'),
+    tString('contact.service.general')
   ];
 
   return (
@@ -164,210 +162,55 @@ const Contact: React.FC = () => {
           </p>
         </div>
 
-        {/* Main Content Grid */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-          {/* Left Column - Contact Methods */}
-          <div>
-            <div 
-              className="p-8"
-              style={{
-                backgroundColor: 'rgb(246, 251, 255)',
-                borderRadius: '16px',
-                boxShadow: 'rgba(16, 49, 77, 0.05) 0px 0.706592px 0.706592px -0.291667px, rgba(16, 49, 77, 0.06) 0px 1.80656px 1.80656px -0.583333px, rgba(16, 49, 77, 0.06) 0px 3.62176px 3.62176px -0.875px, rgba(16, 49, 77, 0.06) 0px 6.8656px 6.8656px -1.16667px, rgba(16, 49, 77, 0.07) 0px 13.6468px 13.6468px -1.45833px, rgba(16, 49, 77, 0.1) 0px 30px 30px -1.75px'
+        {/* Contact Methods - 4 Buttons Grid */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
+          {contactMethods.map((method, index) => (
+            <div
+              key={index}
+              onClick={() => {
+                if (typeof method.action === 'function') {
+                  method.action();
+                } else {
+                  window.open(method.action, '_blank');
+                }
               }}
+              className="group cursor-pointer"
             >
-              <h2 className="text-2xl font-semibold text-black mb-6">
-                {t('contact.methods.title')}
-              </h2>
-              
-              <div className="space-y-6">
-                {contactMethods.map((method, index) => (
-                  <a
-                    key={index}
-                    href={method.action}
-                    className="group block p-4 rounded-xl hover:bg-white/50 transition-all duration-200"
+              <div 
+                className="p-6 rounded-2xl transition-all duration-300 group-hover:scale-105"
+                style={{
+                  backgroundColor: 'rgb(246, 251, 255)',
+                  boxShadow: 'rgba(16, 49, 77, 0.05) 0px 0.706592px 0.706592px -0.291667px, rgba(16, 49, 77, 0.06) 0px 1.80656px 1.80656px -0.583333px, rgba(16, 49, 77, 0.06) 0px 3.62176px 3.62176px -0.875px, rgba(16, 49, 77, 0.06) 0px 6.8656px 6.8656px -1.16667px, rgba(16, 49, 77, 0.07) 0px 13.6468px 13.6468px -1.45833px, rgba(16, 49, 77, 0.1) 0px 30px 30px -1.75px'
+                }}
+              >
+                <div className="flex items-center">
+                  <div 
+                    className="w-12 h-12 rounded-2xl opacity-100 flex items-center justify-center flex-shrink-0"
+                    style={{
+                      backgroundColor: 'rgb(246, 251, 255)',
+                      boxShadow: 'rgba(141, 194, 235, 0.25) 0px -3px 0px 2px inset, rgba(16, 49, 77, 0.21) 0px 0.706592px 0.706592px -0.583333px, rgba(16, 49, 77, 0.2) 0px 1.80656px 1.80656px -1.16667px, rgba(16, 49, 77, 0.2) 0px 3.62176px 3.62176px -1.75px, rgba(16, 49, 77, 0.18) 0px 6.8656px 6.8656px -2.33333px, rgba(16, 49, 77, 0.16) 0px 13.6468px 13.6468px -2.91667px, rgba(16, 49, 77, 0.09) 0px 30px 30px -3.5px'
+                    }}
                   >
-                    <div className="flex items-center gap-4">
-                      <div className="w-12 h-12 rounded-xl bg-[#389CFF] bg-opacity-10 flex items-center justify-center flex-shrink-0 group-hover:bg-opacity-20 transition-colors">
-                        <div className="text-[#389CFF]">
-                          {method.icon}
-                        </div>
-                      </div>
-                      <div className="flex-1">
-                        <h3 className="text-lg font-semibold text-black mb-1">
-                          {method.title}
-                        </h3>
-                        <p className="text-[#64646e] text-sm mb-2 leading-relaxed">
-                          {method.description}
-                        </p>
-                        
-                      </div>
-                      <ArrowRightIcon className="w-5 h-5 text-[#64646e] group-hover:text-[#389CFF] transition-colors" />
+                    <div style={{ color: 'rgb(14, 28, 41)' }}>
+                      {method.icon}
                     </div>
-                  </a>
-                ))}
+                  </div>
+                  <h3 className="text-lg font-semibold text-black ml-4">
+                    {method.title}
+                  </h3>
+                </div>
               </div>
             </div>
-          </div>
+          ))}
+        </div>
 
-          {/* Right Column - Contact Form */}
-          <div>
-          <div 
-              className="p-8"
-              style={{
-                backgroundColor: 'rgb(246, 251, 255)',
-                borderRadius: '16px',
-                boxShadow: 'rgba(16, 49, 77, 0.05) 0px 0.706592px 0.706592px -0.291667px, rgba(16, 49, 77, 0.06) 0px 1.80656px 1.80656px -0.583333px, rgba(16, 49, 77, 0.06) 0px 3.62176px 3.62176px -0.875px, rgba(16, 49, 77, 0.06) 0px 6.8656px 6.8656px -1.16667px, rgba(16, 49, 77, 0.07) 0px 13.6468px 13.6468px -1.45833px, rgba(16, 49, 77, 0.1) 0px 30px 30px -1.75px'
-              }}
-            >
-              <h2 className="text-2xl font-semibold text-black mb-6">
-                {t('contact.form.title')}
-              </h2>
-            
-            
-            <form onSubmit={handleSubmit} className="space-y-6">
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                <div>
-                  <label htmlFor="name" className="block text-sm font-medium text-black mb-2">
-                    {t('contact.form.name')} *
-                  </label>
-                  <input
-                    type="text"
-                    id="name"
-                    name="name"
-                    value={formData.name}
-                    onChange={handleInputChange}
-                    placeholder={t('contact.placeholder.name')}
-                    className="w-full px-4 py-3 border border-[#d8dfe5] rounded-lg focus:outline-none focus:ring-2 focus:ring-[#389CFF] focus:border-transparent transition-colors"
-                    required
-                  />
-                </div>
-                <div>
-                  <label htmlFor="email" className="block text-sm font-medium text-black mb-2">
-                    {t('contact.form.email')} *
-                  </label>
-                  <input
-                    type="email"
-                    id="email"
-                    name="email"
-                    value={formData.email}
-                    onChange={handleInputChange}
-                    placeholder={t('contact.placeholder.email')}
-                    className="w-full px-4 py-3 border border-[#d8dfe5] rounded-lg focus:outline-none focus:ring-2 focus:ring-[#389CFF] focus:border-transparent transition-colors"
-                    required
-                  />
-                </div>
-              </div>
-
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                <div>
-                  <label htmlFor="company" className="block text-sm font-medium text-black mb-2">
-                    {t('contact.form.company')}
-                  </label>
-                  <input
-                    type="text"
-                    id="company"
-                    name="company"
-                    value={formData.company}
-                    onChange={handleInputChange}
-                    placeholder={t('contact.placeholder.company')}
-                    className="w-full px-4 py-3 border border-[#d8dfe5] rounded-lg focus:outline-none focus:ring-2 focus:ring-[#389CFF] focus:border-transparent transition-colors"
-                  />
-                </div>
-                <div>
-                  <label htmlFor="phone" className="block text-sm font-medium text-black mb-2">
-                    {t('contact.form.phone')}
-                  </label>
-                  <input
-                    type="tel"
-                    id="phone"
-                    name="phone"
-                    value={formData.phone}
-                    onChange={handleInputChange}
-                    placeholder={t('contact.placeholder.phone')}
-                    className="w-full px-4 py-3 border border-[#d8dfe5] rounded-lg focus:outline-none focus:ring-2 focus:ring-[#389CFF] focus:border-transparent transition-colors"
-                  />
-                </div>
-              </div>
-
-              <div>
-                <label htmlFor="service" className="block text-sm font-medium text-black mb-2">
-                  {t('contact.form.service')}
-                </label>
-                <select
-                  id="service"
-                  name="service"
-                  value={formData.service}
-                  onChange={handleInputChange}
-                  className="w-full px-4 py-3 border border-[#d8dfe5] rounded-lg focus:outline-none focus:ring-2 focus:ring-[#389CFF] focus:border-transparent transition-colors bg-white"
-                >
-                  <option value="">{t('contact.form.service.select')}</option>
-                  {serviceOptions.map((option, index) => (
-                    <option key={index} value={option}>{option}</option>
-                  ))}
-                </select>
-              </div>
-
-              <div>
-                <label htmlFor="message" className="block text-sm font-medium text-black mb-2">
-                  {t('contact.form.message')} *
-                </label>
-                <textarea
-                  id="message"
-                  name="message"
-                  value={formData.message}
-                  onChange={handleInputChange}
-                  placeholder={t('contact.placeholder.message')}
-                  rows={6}
-                  className="w-full px-4 py-3 border border-[#d8dfe5] rounded-lg focus:outline-none focus:ring-2 focus:ring-[#389CFF] focus:border-transparent transition-colors resize-none"
-                  required
-                ></textarea>
-              </div>
-
-              <Button 
-                type="submit" 
-                variant="cta-primary" 
-                size="cta" 
-                className="w-full"
-                disabled={isSubmitting}
-              >
-                <span className="flex items-center gap-2">
-                  {isSubmitting ? (
-                    <>
-                      <LoaderIcon className="w-4 h-4 animate-spin" />
-                      {t('contact.form.sending')}
-                    </>
-                  ) : (
-                    <>
-                      {t('contact.form.send')}
-                      <SendIcon className="w-4 h-4" />
-                    </>
-                  )}
-                </span>
-              </Button>
-
-              {/* Success/Error Messages */}
-              {submitStatus === 'success' && (
-                <div className="mt-4 p-4 bg-green-50 border border-green-200 rounded-lg">
-                  <div className="flex items-center gap-2">
-                    <CheckIcon className="w-5 h-5 text-green-600" />
-                    <p className="text-green-800 font-medium">
-                      {t('contact.form.success')}
-                    </p>
-                  </div>
-                </div>
-              )}
-
-              {submitStatus === 'error' && (
-                <div className="mt-4 p-4 bg-red-50 border border-red-200 rounded-lg">
-                  <p className="text-red-800 font-medium">
-                    {t('contact.form.error')}
-                  </p>
-                </div>
-              )}
-            </form>
-          </div>
-          </div>
+        {/* Contact Banner */}
+        <div className="mb-20">
+          <img 
+            src="/services/contact.avif" 
+            alt="Contact Us" 
+            className="w-full h-auto rounded-2xl shadow-lg"
+          />
         </div>
 
         {/* FAQ Section */}
@@ -408,8 +251,177 @@ const Contact: React.FC = () => {
           </div>
         </div>
       </div>
+
+      {/* Form Popup Modal */}
+      {showFormPopup && (
+        <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 p-4">
+          <div 
+            className="relative max-w-lg w-full max-h-[90vh] overflow-y-auto rounded-2xl"
+            style={{
+              backgroundColor: 'rgb(246, 251, 255)',
+              boxShadow: 'rgba(16, 49, 77, 0.05) 0px 0.706592px 0.706592px -0.291667px, rgba(16, 49, 77, 0.06) 0px 1.80656px 1.80656px -0.583333px, rgba(16, 49, 77, 0.06) 0px 3.62176px 3.62176px -0.875px, rgba(16, 49, 77, 0.06) 0px 6.8656px 6.8656px -1.16667px, rgba(16, 49, 77, 0.07) 0px 13.6468px 13.6468px -1.45833px, rgba(16, 49, 77, 0.1) 0px 30px 30px -1.75px'
+            }}
+          >
+            {/* Close Button */}
+            <button
+              onClick={() => setShowFormPopup(false)}
+              className="absolute top-4 right-4 p-2 rounded-lg hover:bg-white/50 transition-colors"
+            >
+              <XIcon className="w-5 h-5 text-[#64646e]" />
+            </button>
+
+            <div className="p-8">
+              <h2 className="text-2xl font-semibold text-black mb-6">
+                {t('contact.form.title')}
+              </h2>
+            
+              <form onSubmit={handleSubmit} className="space-y-6">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                  <div>
+                    <label htmlFor="name" className="block text-sm font-medium text-black mb-2">
+                      {t('contact.form.name')} *
+                    </label>
+                    <input
+                      type="text"
+                      id="name"
+                      name="name"
+                      value={formData.name}
+                      onChange={handleInputChange}
+                      placeholder={tString('contact.placeholder.name')}
+                      className="w-full px-4 py-3 border border-[#d8dfe5] rounded-lg focus:outline-none focus:ring-2 focus:ring-[#389CFF] focus:border-transparent transition-colors"
+                      required
+                    />
+                  </div>
+                  <div>
+                    <label htmlFor="email" className="block text-sm font-medium text-black mb-2">
+                      {t('contact.form.email')} *
+                    </label>
+                    <input
+                      type="email"
+                      id="email"
+                      name="email"
+                      value={formData.email}
+                      onChange={handleInputChange}
+                      placeholder={tString('contact.placeholder.email')}
+                      className="w-full px-4 py-3 border border-[#d8dfe5] rounded-lg focus:outline-none focus:ring-2 focus:ring-[#389CFF] focus:border-transparent transition-colors"
+                      required
+                    />
+                  </div>
+                </div>
+
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                  <div>
+                    <label htmlFor="company" className="block text-sm font-medium text-black mb-2">
+                      {t('contact.form.company')}
+                    </label>
+                    <input
+                      type="text"
+                      id="company"
+                      name="company"
+                      value={formData.company}
+                      onChange={handleInputChange}
+                      placeholder={tString('contact.placeholder.company')}
+                      className="w-full px-4 py-3 border border-[#d8dfe5] rounded-lg focus:outline-none focus:ring-2 focus:ring-[#389CFF] focus:border-transparent transition-colors"
+                    />
+                  </div>
+                  <div>
+                    <label htmlFor="phone" className="block text-sm font-medium text-black mb-2">
+                      {t('contact.form.phone')}
+                    </label>
+                    <input
+                      type="tel"
+                      id="phone"
+                      name="phone"
+                      value={formData.phone}
+                      onChange={handleInputChange}
+                      placeholder={tString('contact.placeholder.phone')}
+                      className="w-full px-4 py-3 border border-[#d8dfe5] rounded-lg focus:outline-none focus:ring-2 focus:ring-[#389CFF] focus:border-transparent transition-colors"
+                    />
+                  </div>
+                </div>
+
+                <div>
+                  <label htmlFor="service" className="block text-sm font-medium text-black mb-2">
+                    {t('contact.form.service')}
+                  </label>
+                  <select
+                    id="service"
+                    name="service"
+                    value={formData.service}
+                    onChange={handleInputChange}
+                    className="w-full px-4 py-3 border border-[#d8dfe5] rounded-lg focus:outline-none focus:ring-2 focus:ring-[#389CFF] focus:border-transparent transition-colors bg-white"
+                  >
+                    <option value="">{tString('contact.form.service.select')}</option>
+                    {serviceOptions.map((option, index) => (
+                      <option key={index} value={option}>{option}</option>
+                    ))}
+                  </select>
+                </div>
+
+                <div>
+                  <label htmlFor="message" className="block text-sm font-medium text-black mb-2">
+                    {t('contact.form.message')} *
+                  </label>
+                  <textarea
+                    id="message"
+                    name="message"
+                    value={formData.message}
+                    onChange={handleInputChange}
+                    placeholder={tString('contact.placeholder.message')}
+                    rows={6}
+                    className="w-full px-4 py-3 border border-[#d8dfe5] rounded-lg focus:outline-none focus:ring-2 focus:ring-[#389CFF] focus:border-transparent transition-colors resize-none"
+                    required
+                  ></textarea>
+                </div>
+
+                <Button 
+                  type="submit" 
+                  variant="cta-primary" 
+                  size="cta" 
+                  className="w-full"
+                  disabled={isSubmitting}
+                >
+                  <span className="flex items-center gap-2">
+                    {isSubmitting ? (
+                      <>
+                        <LoaderIcon className="w-4 h-4 animate-spin" />
+                        {t('contact.form.sending')}
+                      </>
+                    ) : (
+                      <>
+                        {t('contact.form.send')}
+                        <SendIcon className="w-4 h-4" />
+                      </>
+                    )}
+                  </span>
+                </Button>
+
+                {/* Success/Error Messages */}
+                {submitStatus === 'success' && (
+                  <div className="mt-4 p-4 bg-green-50 border border-green-200 rounded-lg">
+                    <div className="flex items-center gap-2">
+                      <CheckIcon className="w-5 h-5 text-green-600" />
+                      <p className="text-green-800 font-medium">
+                        {t('contact.form.success')}
+                      </p>
+                    </div>
+                  </div>
+                )}
+
+                {submitStatus === 'error' && (
+                  <div className="mt-4 p-4 bg-red-50 border border-red-200 rounded-lg">
+                    <p className="text-red-800 font-medium">
+                      {t('contact.form.error')}
+                    </p>
+                  </div>
+                )}
+              </form>
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 };
 
-export default Contact; 
+export default Contact;

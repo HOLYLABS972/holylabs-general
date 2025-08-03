@@ -41,8 +41,8 @@ export const Footer = (): JSX.Element => {
             {/* Brand Section */}
             <div className="lg:col-span-2">
               <div className="flex flex-row items-center mb-6 text-white text-2xl font-light">
-                <img src="/logo.svg" alt="HolyLabs" className="w-10 h-10 me-2 brightness-0 invert" />
-                HolyLabs
+                <img src="/logo.svg" alt="Holylabs" className="w-10 h-10 me-2 brightness-0 invert" />
+                Holylabs
               </div>
               <p className="text-white/60 mb-6 leading-relaxed max-w-sm">
                 {t('footer.tagline')}

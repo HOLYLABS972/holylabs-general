@@ -59,7 +59,7 @@ const About: React.FC = () => {
           </div>
           
           <h1 className="text-4xl md:text-5xl text-center whitespace-pre-line bg-gradient-to-t from-black to-black/60 bg-clip-text text-transparent mb-6"
-            dangerouslySetInnerHTML={{ __html: t('about.page.empowering') }}
+            dangerouslySetInnerHTML={{ __html: t('about.page.empowering') as string }}
           />
           
           <p className="text-lg text-[#64646e] max-w-3xl mx-auto leading-relaxed">

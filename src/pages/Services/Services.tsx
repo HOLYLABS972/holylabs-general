@@ -261,7 +261,7 @@ const Services: React.FC = () => {
           
           <h1 
             className="text-4xl md:text-5xl  whitespace-pre-line bg-gradient-to-t from-black to-black/60 bg-clip-text text-transparent mb-6"
-            dangerouslySetInnerHTML={{ __html: t('services.page.title') }}
+            dangerouslySetInnerHTML={{ __html: t('services.page.title') as string }}
           />
           
           <p className="text-lg text-[#64646e] max-w-3xl mx-auto leading-relaxed">

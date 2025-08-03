@@ -6,6 +6,7 @@ interface LanguageContextType {
   language: Language;
   setLanguage: (lang: Language) => void;
   t: (key: string) => string | React.ReactNode;
+  tString: (key: string) => string;
 }
 
 const LanguageContext = createContext<LanguageContextType | undefined>(undefined);
@@ -43,19 +44,19 @@ const translations: Translations = {
   'services.whatsapp.description': { en: '<span class="text-black">Intelligent virtual receptionists</span> that handle customer inquiries <span class="text-black">on any messaging app</span> 24/7 with natural conversations', he: 'פקידי קבלה וירטואליים חכמים המטפלים בפניות לקוחות בכל יישום הודעה 24/7 עם שיחות טבעיות' },
   
   'services.calls.title': { en: 'AI Booking & Order Calls', he: 'שיחות הזמנה ובקשות של בינה מלאכותית' },
-  'services.calls.description': { en: 'Automated calling systems that handle bookings, orders, and customer service calls with human-like interaction', he: 'מערכות שיחה אוטומטיות המטפלות בהזמנות, בקשות ושיחות שירות לקוחות עם אינטראקציה דמוית אדם' },
+  'services.calls.description': { en: '<span class="text-black">Automated calling systems</span> that handle bookings, orders, and customer service calls with human-like interaction', he: 'מערכות שיחה אוטומטיות המטפלות בהזמנות, בקשות ושיחות שירות לקוחות עם אינטראקציה דמוית אדם' },
   
   'services.booking.title': { en: 'Smart Booking Systems', he: 'מערכות הזמנה חכמות' },
-  'services.booking.description': { en: 'Seamless appointment scheduling with automated confirmations and intelligent calendar management', he: 'תיאום פגישות חלק עם אישורים אוטומטיים וניהול לוח שנה חכם' },
+  'services.booking.description': { en: 'Seamless <span class="text-black">appointment scheduling</span> with automated confirmations and intelligent calendar management', he: 'תיאום פגישות חלק עם אישורים אוטומטיים וניהול לוח שנה חכם' },
   
   'services.leads.title': { en: 'Lead Qualification Bots', he: 'בוטים לכישור לידים' },
-  'services.leads.description': { en: 'Intelligent lead scoring and qualification through automated conversations and smart questionnaires', he: 'ניקוד וכישור לידים חכם באמצעות שיחות אוטומטיות ושאלונים חכמים' },
+  'services.leads.description': { en: 'Intelligent <span class="text-black">lead scoring</span> and qualification through automated conversations and smart questionnaires', he: 'ניקוד וכישור לידים חכם באמצעות שיחות אוטומטיות ושאלונים חכמים' },
   
   'services.ads.title': { en: 'AI Ad Campaigns', he: 'קמפיינים פרסומיים של בינה מלאכותית' },
-  'services.ads.description': { en: 'Create and optimize advertising campaigns using AI-driven targeting and performance optimization', he: 'יצירה ואופטימיזציה של קמפיינים פרסומיים באמצעות מיקוד מבוסס בינה מלאכותית ואופטימיזציית ביצועים' },
+  'services.ads.description': { en: 'Create and optimize advertising campaigns using <span class="text-black">AI-driven targeting</span> and <span class="text-black">performance optimization</span> based on data', he: 'יצירה ואופטימיזציה של קמפיינים פרסומיים באמצעות מיקוד מבוסס בינה מלאכותית ואופטימיזציית ביצועים מבוססת נתונים' },
   
   'services.web.title': { en: 'Web Development', he: 'פיתוח אתרים' },
-  'services.web.description': { en: 'Custom website development with integrated AI automation tools for enhanced user experience', he: 'פיתוח אתרים מותאמים אישית עם כלי אוטומציה של בינה מלאכותית לחוויית משתמש משופרת' },
+  'services.web.description': { en: 'Custom website development with integrated <span class="text-black">AI automation tools</span> and beautiful design for enhanced user experience', he: 'פיתוח אתרים מותאמים אישית עם כלי אוטומציה של בינה מלאכותית ועיצוב יפה לחוויית משתמש משופרת' },
   
   // Services Benefits
   'services.benefits.collaboration': { en: 'Expert Collaboration', he: 'שיתוף פעולה מומחים' },
@@ -251,19 +252,19 @@ const translations: Translations = {
   
   // Services Details
   'services.whatsapp.subtitle': { en: '24/7 Intelligent Customer Support', he: 'תמיכת לקוחות חכמה 24/7' },
-  'services.whatsapp.detailed': { en: 'Transform your customer service with AI-powered WhatsApp receptionists that handle inquiries, provide instant responses, and qualify leads around the clock.', he: 'שנה את שירות הלקוחות שלך עם פקידי קבלה מבוססי בינה מלאכותית בוואטסאפ שמטפלים בפניות, מספקים תגובות מיידיות ומכשירים לידים מסביב לשעון.' },
+  'services.whatsapp.detailed': { en: 'Transform your customer service with <span class="text-black">AI-powered WhatsApp/Telegram/Messenger</span> receptionists that handle inquiries, provide instant responses, and qualify leads around the clock. Then see all the data collected in one place for your choice.', he: 'שנה את שירות הלקוחות שלך עם פקידי קבלה מבוססי בינה מלאכותית בוואטסאפ/טלגרם/מסנגר שמטפלים בפניות, מספקים תגובות מיידיות ומכשירים לידים מסביב לשעון. ואז תראה את כל הנתונים במקום אחד.' },
   
   'services.calls.subtitle': { en: 'Automated Voice Interactions', he: 'אינטראקציות קוליות אוטומטיות' },
-  'services.calls.detailed': { en: 'Intelligent calling systems that handle bookings, orders, and customer service calls with human-like voice interaction and natural conversation flow.', he: 'מערכות שיחה חכמות המטפלות בהזמנות, בקשות ושיחות שירות לקוחות עם אינטראקציה קולית דמוית אדם וזרימת שיחה טבעיית.' },
+  'services.calls.detailed': { en: '<span class="text-black">Intelligent calling systems</span> that handle bookings, orders, and customer service calls <span class="text-black">with human-like voice interaction</span> and natural conversation flow.', he: 'מערכות שיחה חכמות המטפלות בהזמנות, בקשות ושיחות שירות לקוחות עם אינטראקציה קולית דמוית אדם וזרימת שיחה טבעיית.' },
   
   'services.leads.subtitle': { en: 'Intelligent Lead Processing', he: 'עיבוד לידים חכם' },
-  'services.leads.detailed': { en: 'AI-powered lead qualification through smart questionnaires, behavioral analysis, and automated scoring to identify your best prospects.', he: 'כישור לידים מבוסס בינה מלאכותית באמצעות שאלונים חכמים, ניתוח התנהגותי וניקוד אוטומטי כדי לזהות את הפרוספקטים הטובים ביותר שלך.' },
+  'services.leads.detailed': { en: 'AI-powered lead qualification through <span class="text-black">smart questionnaires</span>, <span class="text-black">behavioral analysis</span>, and <span class="text-black">automated scoring</span> to identify your best prospects.', he: 'כישור לידים מבוסס בינה מלאכותית באמצעות שאלונים חכמים, ניתוח התנהגותי וניקוד אוטומטי כדי לזהות את הפרוספקטים הטובים ביותר שלך.' },
   
   'services.ads.subtitle': { en: 'Smart Advertising Automation', he: 'אוטומציה פרסומית חכמה' },
-  'services.ads.detailed': { en: 'Create, optimize, and manage advertising campaigns using AI-driven targeting, creative optimization, and performance analysis.', he: 'יצירה, אופטימיזציה וניהול קמפיינים פרסומיים באמצעות מיקוד מבוסס בינה מלאכותית, אופטימיזציה יצירתית וניתוח ביצועים.' },
+  'services.ads.detailed': { en: '<span class="text-black">Create, optimize, and manage</span> advertising campaigns using <span class="text-black">AI-driven targeting</span>, <span class="text-black">creative optimization</span>, and <span class="text-black">performance analysis</span>.', he: 'יצירה, אופטימיזציה וניהול קמפיינים פרסומיים באמצעות מיקוד מבוסס בינה מלאכותית, אופטימיזציה יצירתית וניתוח ביצועים.' },
   
   'services.web.subtitle': { en: 'AI-Integrated Websites', he: 'אתרים משולבי בינה מלאכותית' },
-  'services.web.detailed': { en: 'Custom website development with integrated AI automation tools, chatbots, and enhanced user experience optimization.', he: 'פיתוח אתרים מותאמים אישית עם כלי אוטומציה של בינה מלאכותית משולבים, צ\'אטבוטים ואופטימיזציית חוויית משתמש משופרת.' },
+  'services.web.detailed': { en: 'Custom website development with perfect design and integrated <span class="text-black">AI automation tools</span>, <span class="text-black">chatbots</span>, and <span class="text-black">enhanced user experience optimization</span>.', he: 'פיתוח אתרים מותאמים אישית עם עיצוב מושלם וכלי אוטומציה של בינה מלאכותית משולבים, צ\'אטבוטים ואופטימיזציית חוויית משתמש משופרת.' },
   
   // Service Features
   'services.features.nlp': { en: 'Natural language processing', he: 'עיבוד שפה טבעית' },
@@ -554,8 +555,12 @@ export const LanguageProvider: React.FC<{ children: ReactNode }> = ({ children }
     return translation || key;
   };
 
+  const tString = (key: string): string => {
+    return translations[key]?.[language] || key;
+  };
+
   return (
-    <LanguageContext.Provider value={{ language, setLanguage: setLanguageWithPersistence, t }}>
+    <LanguageContext.Provider value={{ language, setLanguage: setLanguageWithPersistence, t, tString }}>
       <div className={language === 'he' ? 'rtl' : 'ltr'} dir={language === 'he' ? 'rtl' : 'ltr'}>
         {children}
       </div>

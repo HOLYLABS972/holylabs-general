@@ -72,7 +72,7 @@ export const AboutUs = (): JSX.Element => {
         <div className="grid md:grid-cols-2 gap-12 items-center mb-20">
           <div>
             <h3 className="text-3xl font-bold text-black mb-6">
-              Why Choose HOLYLABS?
+              Why Choose Holylabs?
             </h3>
             <p className="text-[#64646e] mb-8 text-lg leading-relaxed">
               We're more than just an automation platform. We're your partner in scaling 
