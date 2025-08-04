@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-route
 import { LanguageProvider, useLanguage } from './contexts/LanguageContext';
 import Layout from './layouts/Layout';
 import { LoaderIcon } from 'lucide-react';
+import ScrollToTop from './components/ScrollToTop';
 
 import { MetaPixel } from './lib/metaPixel';
 
@@ -108,6 +109,7 @@ function App() {
         }}
       >
         <SEOUpdater />
+        <ScrollToTop />
         <Layout>
           <Suspense fallback={<PageLoader />}>
             <Routes>

@@ -8,7 +8,8 @@ import {
   ArrowRightIcon,
   BookOpenIcon,
   TrendingUpIcon,
-  LoaderIcon
+  LoaderIcon,
+  UsersIcon
 } from 'lucide-react';
 import { Button } from '../../components/ui/button';
 import { useLanguage } from '../../contexts/LanguageContext';
@@ -125,13 +126,6 @@ const Blog: React.FC = () => {
     }
   };
 
-  const toggleTag = (tag: string) => {
-    setSelectedTags(prev => 
-      prev.includes(tag) 
-        ? prev.filter(t => t !== tag)
-        : [...prev, tag]
-    );
-  };
 
   const clearFilters = () => {
     setSearchTerm('');
@@ -166,18 +160,17 @@ const Blog: React.FC = () => {
         }}
       />
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 sm:py-20 relative z-10">
-        
+<div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 sm:py-20 relative z-10">
         {/* Header Section */}
-        <div className="text-center mb-8 mt-10">
-          <div className="inline-flex items-center justify-center gap-2 px-4 py-2 mb-6 rounded-full border border-[#d8dfe5] bg-[rgba(241,242,251,0.9)] shadow-[0px_0px_0px_2px_rgba(241,242,251,0.9)]">
+        <div className="text-center mb-16 mt-20">
+        <div className="inline-flex items-center justify-center gap-2 px-4 py-2 mb-6 rounded-full border border-[#d8dfe5] bg-[rgba(241,242,251,0.9)] shadow-[0px_0px_0px_2px_rgba(241,242,251,0.9)]">
             <BookOpenIcon className="w-4 h-4 text-[#161e2e] opacity-80" />
             <span className="font-normal text-[#161e2e] text-sm opacity-80">
               {t('blog.badge')}
             </span>
           </div>
           
-          <h1 className="text-4xl md:text-5xl text-center bg-gradient-to-t from-black to-black/60 bg-clip-text text-transparent mb-6 leading-tight" style={{ lineHeight: '1.2', paddingBottom: '0.1em' }}>
+          <h1 className="text-4xl md:text-5xl text-center whitespace-pre-line mb-6 gradient-text">
             {t('blog.title')}
           </h1>
           
@@ -197,7 +190,7 @@ const Blog: React.FC = () => {
               <SearchIcon className="absolute left-4 top-1/2 transform -translate-y-1/2 w-5 h-5 text-[#64646e]" />
               <input
                 type="text"
-                placeholder={t('blog.search.placeholder')}
+                placeholder={t('blog.search.placeholder') as string}
                 value={searchTerm}
                 onChange={(e) => setSearchTerm(e.target.value)}
                 className="w-full pl-12 pr-4 py-3 rounded-lg border border-[#d8dfe5] bg-white text-black placeholder-[#64646e] focus:outline-none focus:ring-2 focus:ring-[#389CFF] focus:border-transparent transition-colors"

@@ -6,6 +6,21 @@
   .all-\[unset\] {
     all: unset;
   }
+  
+  .gradient-text {
+    background: linear-gradient(to bottom, #6b7280 0%, #000000 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    padding-bottom: 0.2em;
+  }
+  
+  /* Mobile responsive version */
+  @media (max-width: 640px) {
+    .gradient-text {
+      padding-bottom: 0.15em;
+    }
+  }
 }
 
 

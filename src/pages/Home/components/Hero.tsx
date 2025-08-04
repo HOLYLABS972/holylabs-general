@@ -1,7 +1,7 @@
-import { forwardRef } from "react";
+import React from "react";
 import { HeaderSection } from "./HeaderSection";
 
-const Hero = forwardRef<HTMLDivElement>((_, ref) => {
+const Hero: React.FC = () => {
   return (
     <>
       <style>
@@ -40,7 +40,7 @@ const Hero = forwardRef<HTMLDivElement>((_, ref) => {
           }
         `}
       </style>
-      <section ref={ref} className="w-full min-h-screen relative overflow-hidden">
+      <section className="w-full min-h-screen relative overflow-hidden">
         {/* Layered Gradient Spiral Background */}
         <div className="spiral-bg absolute inset-0 pointer-events-none z-0">
           {/* Spiral Layer 1 */}
@@ -102,6 +102,6 @@ const Hero = forwardRef<HTMLDivElement>((_, ref) => {
       </section>
     </>
   );
-});
+};
 
 export default Hero;

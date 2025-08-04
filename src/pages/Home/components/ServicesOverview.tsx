@@ -1,8 +1,8 @@
-import React, { forwardRef } from 'react';
-import { BotIcon, PhoneIcon, CalendarIcon, MessageSquareIcon, CloudUploadIcon, UsersIcon, LinkIcon, TrendingUpIcon, MegaphoneIcon, GlobeIcon, SearchIcon } from 'lucide-react';
+import React from 'react';
+import { BotIcon, PhoneIcon, CalendarIcon, MessageSquareIcon, UsersIcon, LinkIcon, TrendingUpIcon, MegaphoneIcon, GlobeIcon } from 'lucide-react';
 import { useLanguage } from '../../../contexts/LanguageContext';
 
-const ServicesOverview = forwardRef<HTMLDivElement>((props, ref) => {
+const ServicesOverview: React.FC = () => {
   const { t } = useLanguage();
 
   const services = [
@@ -60,7 +60,7 @@ const ServicesOverview = forwardRef<HTMLDivElement>((props, ref) => {
   ];
 
   return (
-    <section ref={ref} className="py-20 bg-[#FBFCFF] relative overflow-hidden">
+    <section className="py-20 bg-[#FBFCFF] relative overflow-hidden">
       {/* Grain effect overlay */}
       <div 
         className="absolute inset-0 opacity-[0.20] pointer-events-none -z-10"
@@ -224,6 +224,6 @@ const ServicesOverview = forwardRef<HTMLDivElement>((props, ref) => {
       </div>
     </section>
   );
-});
+};
 
 export default ServicesOverview; 

@@ -166,10 +166,10 @@ const translations: Translations = {
   
   // About Page Specific Translations
   'about.page.aboutus': { en: 'About Us', he: 'אודות' },
-  'about.page.empowering': { en: 'Empowering businesses through <span style="font-style: italic; font-weight: 400; font-family: \'IBM Plex Serif\', serif;">intelligent</span> automation', he: 'מעצימים עסקים באמצעות אוטומציה חכמה' },
+  'about.page.empowering': { en: 'Empowering businesses through intelligent automation', he: 'מעצימים עסקים באמצעות אוטומציה חכמה' },
   'about.page.mission': { en: 'We\'re on a mission to make AI automation accessible to every business, helping companies streamline operations, reduce costs, and accelerate growth through intelligent solutions.', he: 'המשימה שלנו היא להפוך את האוטומציה של בינה מלאכותית לנגישה לכל עסק, לעזור לחברות לייעל פעולות, להפחית עלויות ולהאיץ צמיחה באמצעות פתרונות חכמים.' },
   'about.page.ourstory': { en: 'Our Story', he: 'הסיפור שלנו' },
-  'about.page.story1': { en: 'Founded with a vision to democratize AI automation, HOLYLABS emerged from the recognition that small and medium businesses were being left behind in the digital transformation wave.', he: 'נוסד עם חזון להנגיש אוטומציה של בינה מלאכותית, הולי לאבס נוצרה מתוך ההכרה שעסקים קטנים ובינוניים נשארים מאחור בגל הטרנספורמציה הדיגיטלית.' },
+  'about.page.story1': { en: 'Founded with a vision to democratize AI automation, Holylabs emerged from the recognition that small and medium businesses were being left behind in the digital transformation wave.', he: 'נוסד עם חזון להנגיש אוטומציה של בינה מלאכותית, הולי לאבס נוצרה מתוך ההכרה שעסקים קטנים ובינוניים נשארים מאחור בגל הטרנספורמציה הדיגיטלית.' },
   'about.page.story2': { en: 'Our founders, experienced in both technology and business operations, witnessed firsthand how manual processes were holding back incredible businesses from reaching their full potential.', he: 'המייסדים שלנו, בעלי ניסיון בטכנולוגיה ובתפעול עסקי, היו עדים מקרוב כיצד תהליכים ידניים מעכבים עסקים מדהימים מלהגיע למלוא הפוטנציאל שלהם.' },
   'about.page.story3': { en: 'Today, we\'re proud to be the bridge between cutting-edge AI technology and practical business solutions, making automation accessible, affordable, and effective for businesses of all sizes.', he: 'כיום, אנו גאים להיות הגשר בין טכנולוגיית בינה מלאכותית חדשנית לבין פתרונות עסקיים מעשיים, ולהפוך אוטומציה לנגישה, במחיר סביר ויעילה לעסקים מכל הגדלים.' },
   'about.page.ourmission': { en: 'Our Mission', he: 'המשימה שלנו' },
@@ -395,7 +395,7 @@ const translations: Translations = {
   // Contact Page
   'contact.badge': { en: 'Get In Touch', he: 'צור קשר' },
   'contact.title': { en: 'Let\'s discuss your automation needs', he: 'בואו נדבר על צרכי האוטומציה שלכם' },
-  'contact.description': { en: 'Ready to transform your business with intelligent automation? We\'re here to help you get started. Choose the best way to connect with our team.', he: 'מוכנים לשנות את העסק שלכם עם אוטומציה חכמה? אנחנו כאן כדי לעזור לכם להתחיל. בחרו את הדרך הטובה ביותר להתחבר עם הצוות שלנו.' },
+  'contact.description': { en: 'Choose the best way to connect with our team.', he: 'מוכנים לשנות את העסק שלכם עם אוטומציה חכמה? אנחנו כאן כדי לעזור לכם להתחיל. בחרו את הדרך הטובה ביותר להתחבר עם הצוות     שלנו.' },
   
   // Contact Methods
   'contact.methods.title': { en: 'Get in Touch', he: 'צרו קשר' },

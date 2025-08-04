@@ -177,7 +177,7 @@ const Contact: React.FC = () => {
               className="group cursor-pointer"
             >
               <div 
-                className="p-6 rounded-2xl transition-all duration-300 group-hover:scale-105"
+                className="p-6 rounded-2xl"
                 style={{
                   backgroundColor: 'rgb(246, 251, 255)',
                   boxShadow: 'rgba(16, 49, 77, 0.05) 0px 0.706592px 0.706592px -0.291667px, rgba(16, 49, 77, 0.06) 0px 1.80656px 1.80656px -0.583333px, rgba(16, 49, 77, 0.06) 0px 3.62176px 3.62176px -0.875px, rgba(16, 49, 77, 0.06) 0px 6.8656px 6.8656px -1.16667px, rgba(16, 49, 77, 0.07) 0px 13.6468px 13.6468px -1.45833px, rgba(16, 49, 77, 0.1) 0px 30px 30px -1.75px'
@@ -185,17 +185,17 @@ const Contact: React.FC = () => {
               >
                 <div className="flex items-center">
                   <div 
-                    className="w-12 h-12 rounded-2xl opacity-100 flex items-center justify-center flex-shrink-0"
+                    className="w-12 h-12 rounded-2xl opacity-100 flex items-center justify-center flex-shrink-0 group-hover:text-[#7597B6] transition-colors transition-all duration-300"
                     style={{
                       backgroundColor: 'rgb(246, 251, 255)',
                       boxShadow: 'rgba(141, 194, 235, 0.25) 0px -3px 0px 2px inset, rgba(16, 49, 77, 0.21) 0px 0.706592px 0.706592px -0.583333px, rgba(16, 49, 77, 0.2) 0px 1.80656px 1.80656px -1.16667px, rgba(16, 49, 77, 0.2) 0px 3.62176px 3.62176px -1.75px, rgba(16, 49, 77, 0.18) 0px 6.8656px 6.8656px -2.33333px, rgba(16, 49, 77, 0.16) 0px 13.6468px 13.6468px -2.91667px, rgba(16, 49, 77, 0.09) 0px 30px 30px -3.5px'
                     }}
                   >
-                    <div style={{ color: 'rgb(14, 28, 41)' }}>
+                    <div className="text-black group-hover:text-[#7597B6] transition-colors transition-all duration-300 group-hover:scale-110">
                       {method.icon}
                     </div>
                   </div>
-                  <h3 className="text-lg font-semibold text-black ml-4">
+                  <h3 className="text-lg font-semibold text-black ml-4 group-hover:text-[#7597B6] transition-colors transition-all duration-300">
                     {method.title}
                   </h3>
                 </div>

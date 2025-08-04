@@ -49,7 +49,7 @@ export const Navbar = (): JSX.Element => {
           {/* Desktop Navigation - Centered */}
           <div className="hidden md:flex flex-auto justify-center">
             <NavigationMenu>
-              <NavigationMenuList className="flex items-center justify-center gap-[30px] rounded-[10px] px-7 py-[15px] bg-white/80 backdrop-blur-sm shadow-[0px_1.5px_1.3px_#e5e5e5,0px_0px_0px_1px_#f6f6f6]">
+              <NavigationMenuList className="flex items-center justify-center gap-[30px] rounded-[10px] px-7 py-[15px] bg-white/80 backdrop-blur-sm shadow-[0px_1.5px_1.3px_#e5e5e5,0px_0px_0px_1px_#f6f6f6] shadow-lg">
                 {menuItems.map((item, index) => (
                   <NavigationMenuItem key={index} className="relative">
                     <NavigationMenuLink asChild>
@@ -63,7 +63,7 @@ export const Navbar = (): JSX.Element => {
                         {isActiveRoute(item.href) && (
                           <div 
                             className="absolute -bottom-[15px] left-0 right-0 h-0.5 rounded-full"
-                            style={{ backgroundColor: '#389CFF' }}
+                            style={{ backgroundColor: '#7597B6' }}
                           />
                         )}
                       </Link>
