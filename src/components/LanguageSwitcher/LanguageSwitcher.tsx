@@ -35,7 +35,7 @@ export const LanguageSwitcher: React.FC = () => {
   };
 
   return (
-    <div className="relative" ref={dropdownRef}>
+    <div className="relative" ref={dropdownRef} >
       <Button
         variant="secondary"
         size="icon"
@@ -43,7 +43,7 @@ export const LanguageSwitcher: React.FC = () => {
         className="transition-all duration-200 w-auto aspect-square"
         title="Select Language"
       >
-        <div className="flex items-center px-2 gap-2">
+        <div className="flex items-center px-2 gap-4 py-4" >
           <Globe className="w-5 h-5" />
           <ChevronDown className={`w-4 h-4 transition-transform duration-200 ${isOpen ? 'rotate-180' : ''}`} />
         </div>

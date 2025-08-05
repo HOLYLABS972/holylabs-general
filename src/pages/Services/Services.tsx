@@ -275,21 +275,7 @@ const Services: React.FC = () => {
         }}
       />
 
-      {/* Fixed Action Button */}
-      <div className="fixed bottom-6 right-6 z-50">
-        <Link to="/contact">
-          <Button 
-            variant="cta-primary" 
-            size="cta"
-            className="shadow-lg hover:shadow-xl"
-          >
-            <span className="flex items-center gap-2">
-              <CalendarIcon className="w-4 h-4" />
-              Schedule Call
-            </span>
-          </Button>
-        </Link>
-      </div>
+      
 
       <div className="max-w-9xl mx-auto px-4 sm:px-6 lg:px-8 py-10 sm:py-20">
         {/* Header Section */}
@@ -455,7 +441,7 @@ const Services: React.FC = () => {
                     
                     {/* Expandable Features */}
                     {expandedFeatures === index && (
-                      <div className="mt-4 pt-4 border-t border-gray-200 space-y-2 animate-in slide-in-from-top duration-300">
+                      <div className="mt-4 pt-4 border-t border-gray-200 space-y-2 animate-in slide-in-from-top duration-300 text-left">
                         {service.features.slice(0, 4).map((feature, featureIndex) => (
                           <div key={featureIndex} className="flex items-center gap-2 text-left">
                             <CheckIcon className="w-3 h-3 text-[#389CFF] flex-shrink-0" />
@@ -466,24 +452,7 @@ const Services: React.FC = () => {
                     )}
                     
                     {/* CTA Button */}
-                    <div className="mt-4 pt-4 border-t border-gray-200">
-                      <Link 
-                        to="/contact" 
-                        onClick={(e) => e.stopPropagation()}
-                        className="w-full"
-                      >
-                        <Button 
-                          variant="cta-secondary" 
-                          size="sm"
-                          className="w-full group-hover:bg-[#389CFF] group-hover:text-white transition-all duration-300"
-                        >
-                          <span className="flex items-center justify-center gap-2">
-                            Schedule Call
-                            <ArrowRightIcon className="w-3 h-3" />
-                          </span>
-                        </Button>
-                      </Link>
-                    </div>
+                     
                   </div>
                 </div>
               </div>

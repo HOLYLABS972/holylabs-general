@@ -29,7 +29,7 @@ const translations: Translations = {
 
   // Hero Section
   'hero.badge': { en: 'AI-Powered Business Automation', he: 'אוטומציה עסקית מבוססת בינה מלאכותית' },
-  'hero.title': { en: 'Automate Your Business', he: 'אוטומציה להעסק שלך' },
+  'hero.title': { en: 'Automate Your Business', he: 'הפכו את העסק שלכם לאוטומטי' },
   'hero.subtitle': { en: 'Transform your <span class="text-black"> business with AI</span>-powered chatbots, automated calls,\nand smart booking systems that work 24/7 to <span class="text-black">  grow your revenue.</span>', he: 'הפכו את העסק שלכם למוצלח בעזרת צ׳אטבותים המופעלים על ידי בינה מלאכותית, שיחות אוטומטיות ומערכות הזמנות חכמות שעובדות 24/7 כדי להגדיל את ההכנסות שלכם.' },
   'hero.cta.primary': { en: 'Call Now', he: 'התקשר עכשיו' },
   'hero.cta.secondary': { en: 'Explore Services', he: 'סיור בשירותים' },
@@ -43,8 +43,8 @@ const translations: Translations = {
   'services.whatsapp.title': { en: 'AI Chatbots', he: 'פקידי קבלה של בינה מלאכותית' },
   'services.whatsapp.description': { en: '<span class="text-black">Intelligent virtual receptionists</span> that handle customer inquiries <span class="text-black">on any messaging app</span> 24/7 with natural conversations', he: 'פקידי קבלה וירטואליים חכמים המטפלים בפניות לקוחות בכל יישום הודעה 24/7 עם שיחות טבעיות' },
   
-  'services.calls.title': { en: 'AI Booking & Order Calls', he: 'שיחות הזמנה ובקשות של בינה מלאכותית' },
-  'services.calls.description': { en: '<span class="text-black">Automated calling systems</span> that handle bookings, orders, and customer service calls with human-like interaction', he: 'מערכות שיחה אוטומטיות המטפלות בהזמנות, בקשות ושיחות שירות לקוחות עם אינטראקציה דמוית אדם' },
+  'services.calls.title': { en: 'AI Booking & Order Calls', he: 'שיחות הזמנות ופקודות של בינה מלאכותית' },
+  'services.calls.description': { en: '<span class="text-black">Automated calling systems</span> that handle bookings, orders, and customer service calls with human-like interaction', he: 'מערכות שיחה אוטומטיות המטפלות בהזמנות, הזמנות ושיחות שירות לקוחות עם אינטראקציה דמוית אדם' },
   
   'services.booking.title': { en: 'Smart Booking Systems', he: 'מערכות הזמנה חכמות' },
   'services.booking.description': { en: 'Seamless <span class="text-black">appointment scheduling</span> with automated confirmations and intelligent calendar management', he: 'תיאום פגישות חלק עם אישורים אוטומטיים וניהול לוח שנה חכם' },
@@ -59,7 +59,7 @@ const translations: Translations = {
   'services.web.description': { en: 'Custom website development with integrated <span class="text-black">AI automation tools</span> and beautiful design for enhanced user experience', he: 'פיתוח אתרים מותאמים אישית עם כלי אוטומציה של בינה מלאכותית ועיצוב יפה לחוויית משתמש משופרת' },
   
   // Services Benefits
-  'services.benefits.collaboration': { en: 'Expert Collaboration', he: 'שיתוף פעולה מומחים' },
+  'services.benefits.collaboration': { en: 'Expert Collaboration', he: 'שיתוף פעולה עם מומחים' },
   'services.benefits.integration': { en: 'Seamless Integration', he: 'שילוב חלק' },
   'services.benefits.scalable': { en: 'Scalable Solutions', he: 'פתרונות מדרגיים' },
 
@@ -194,25 +194,25 @@ const translations: Translations = {
 
   // FAQ Section
   'faq.badge': { en: 'FAQ', he: 'שאלות נפוצות' },
-  'faq.title': { en: 'Frequently Asked <span style="font-style: italic; font-family: \'IBM Plex Serif\', serif;">Questions</span>', he: 'שאלות <span style="font-style: italic; font-family: \'IBM Plex Serif\', serif;">נפוצות</span>' },
-  'faq.description': { en: 'Find answers to common questions about HOLYLABS. Can\'t find what you\'re looking for? Contact our support team.', he: 'מצאו תשובות לשאלות נפוצות על הולי גרוז. לא מוצאים את מה שאתם מחפשים? צרו קשר עם צוות התמיכה שלנו.' },
+  'faq.title': { en: 'Frequently Asked Questions', he: 'שאלות נפוצות' },
+  'faq.description': { en: 'Find answers to common questions about Holylabs. Can\'t find what you\'re looking for? Contact our support team.', he: 'מצאו תשובות לשאלות נפוצות על הולי לאבס. לא מוצאים את מה שאתם מחפשים? צרו קשר עם צוות התמיכה שלנו.' },
 
-  'faq.q1': { en: 'What is HOLYLABS and how does it work?', he: 'מה זה הולי גרוז ואיך זה עובד?' },
-  'faq.a1': { en: 'HOLYLABS is an AI automation platform that helps businesses automate customer interactions through chatbots, automated calls, and smart booking systems. Our AI learns your business processes and handles customer inquiries, appointments, and sales 24/7.', he: 'הולי גרוז היא פלטפורמת אוטומציה של בינה מלאכותית שעוזרת לעסקים להפוך לאוטומטיים את האינטראקציות עם לקוחות באמצעות צ\'אטבוטים, שיחות אוטומטיות ומערכות הזמנה חכמות. הבינה המלאכותית שלנו לומדת את התהליכים העסקיים שלכם ומטפלת בפניות לקוחות, פגישות ומכירות 24/7.' },
+  'faq.q1': { en: 'What is Holylabs and how does it work?', he: 'מה זה הולי לאבס ואיך זה עובד?' },
+  'faq.a1': { en: 'Holylabs is an <span class="text-black">AI automation platform</span> that helps businesses automate customer interactions through chatbots, automated calls, and smart booking systems. Our AI learns your business processes and handles customer inquiries, appointments, and sales 24/7.', he: 'הולי לאבס היא פלטפורמת <span class="text-black">אוטומציה של בינה מלאכותית</span> שעוזרת לעסקים להפוך לאוטומטיים את האינטראקציות עם לקוחות באמצעות צ\'אטבוטים, שיחות אוטומטיות ומערכות הזמנה חכמות. הבינה המלאכותית שלנו לומדת את התהליכים העסקיים שלכם ומטפלת בפניות לקוחות, פגישות ומכירות 24/7.' },
 
   'faq.q2': { en: 'How quickly can I set up automation for my business?', he: 'כמה מהר אני יכול להקים אוטומציה לעסק שלי?' },
   'faq.a2': { en: 'Most businesses can have their first automation running within 24-48 hours. Our team handles the setup process, and we provide comprehensive training to ensure you get the most out of your automated systems.', he: 'רוב העסקים יכולים להפעיל את האוטומציה הראשונה שלהם תוך 24-48 שעות. הצוות שלנו מטפל בתהליך ההתקנה, ואנחנו מספקים הכשרה מקיפה כדי להבטיח שתפיקו את המקסימום מהמערכות האוטומטיות שלכם.' },
 
-  'faq.q3': { en: 'What types of businesses can benefit from HOLYLABS?', he: 'איזה סוגי עסקים יכולים להפיק תועלת מהולי גרוז?' },
-  'faq.a3': { en: 'Any business that interacts with customers can benefit from our automation solutions. This includes restaurants, clinics, salons, retail stores, service providers, and more. Our AI adapts to your specific industry and business model.', he: 'כל עסק שמקיים אינטראקציה עם לקוחות יכול להפיק תועלת מפתרונות האוטומציה שלנו. זה כולל מסעדות, מרפאות, מכוני יופי, חנויות קמעונאיות, ספקי שירותים ועוד. הבינה המלאכותית שלנו מתאימה את עצמה לתחום הספציפי שלכם ולמודל העסקי שלכם.' },
+  'faq.q3': { en: 'What types of businesses can benefit from Holylabs?', he: 'איזה סוגי עסקים יכולים להפיק תועלת מהולי לאבס?' },
+  'faq.a3': { en: 'Any business that interacts with customers can benefit from <span class="text-black">our automation solutions</span>. This includes restaurants, clinics, salons, retail stores, service providers, and more. Our AI adapts to your specific industry and business model.', he: 'כל עסק שמקיים אינטראקציה עם לקוחות יכול להפיק תועלת מ<span class="text-black">פתרונות האוטומציה שלנו</span>. זה כולל מסעדות, מרפאות, מכוני יופי, חנויות קמעונאיות, ספקי שירותים ועוד. הבינה המלאכותית שלנו מתאימה את עצמה לתחום הספציפי שלכם ולמודל העסקי שלכם.' },
 
   'faq.q4': { en: 'Is there a free trial available?', he: 'האם יש ניסיון חינם?' },
   'faq.a4': { en: 'Yes! We offer a 14-day free trial that includes full access to our platform. You can test all features including chatbots, automated calls, and booking systems without any commitment.', he: 'כן! אנחנו מציעים ניסיון חינם של 14 יום שכולל גישה מלאה לפלטפורמה שלנו. אתם יכולים לבדוק את כל התכונות כולל צ\'אטבוטים, שיחות אוטומטיות ומערכות הזמנה ללא כל התחייבות.' },
 
-  'faq.q5': { en: 'How secure is my business data with HOLYLABS?', he: 'כמה מאובטח המידע העסקי שלי עם הולי גרוז?' },
+  'faq.q5': { en: 'How secure is my business data with Holylabs?', he: 'כמה מאובטח המידע העסקי שלי עם הולי לאבס?' },
   'faq.a5': { en: 'Security is our top priority. We use enterprise-grade encryption, comply with international data protection standards, and store all data in secure, redundant servers. Your data is never shared with third parties and you maintain full ownership and control.', he: 'אבטחה היא העדיפות העליונה שלנו. אנחנו משתמשים בהצפנה ברמה ארגונית, עומדים בתקני הגנת מידע בינלאומיים, ושומרים את כל הנתונים בשרתים מאובטחים ומיותרים. הנתונים שלכם לעולם לא משותפים עם צדדים שלישיים ואתם שומרים על בעלות ושליטה מלאה.' },
 
-  'faq.q6': { en: 'Can I integrate HOLYLABS with my existing systems?', he: 'האם אני יכול לשלב את הולי גרוז עם המערכות הקיימות שלי?' },
+  'faq.q6': { en: 'Can I integrate Holylabs with my existing systems?', he: 'האם אני יכול לשלב את הולי לאבס עם המערכות הקיימות שלי?' },
   'faq.a6': { en: 'Absolutely! We offer integrations with popular CRM systems, calendar applications, payment processors, and more. Our API also allows for custom integrations to fit seamlessly into your existing workflow.', he: 'בהחלט! אנחנו מציעים שילובים עם מערכות CRM פופולריות, יישומי לוח שנה, מעבדי תשלומים ועוד. ה-API שלנו גם מאפשר שילובים מותאמים אישית כדי להשתלב בצורה חלקה בזרימת העבודה הקיימת שלכם.' },
 
   'faq.contact': { en: 'Still have questions?', he: 'עדיין יש שאלות?' },
@@ -255,7 +255,7 @@ const translations: Translations = {
   'services.whatsapp.detailed': { en: 'Transform your customer service with <span class="text-black">AI-powered WhatsApp/Telegram/Messenger</span> receptionists that handle inquiries, provide instant responses, and qualify leads around the clock. Then see all the data collected in one place for your choice.', he: 'שנה את שירות הלקוחות שלך עם פקידי קבלה מבוססי בינה מלאכותית בוואטסאפ/טלגרם/מסנגר שמטפלים בפניות, מספקים תגובות מיידיות ומכשירים לידים מסביב לשעון. ואז תראה את כל הנתונים במקום אחד.' },
   
   'services.calls.subtitle': { en: 'Automated Voice Interactions', he: 'אינטראקציות קוליות אוטומטיות' },
-  'services.calls.detailed': { en: '<span class="text-black">Intelligent calling systems</span> that handle bookings, orders, and customer service calls <span class="text-black">with human-like voice interaction</span> and natural conversation flow.', he: 'מערכות שיחה חכמות המטפלות בהזמנות, בקשות ושיחות שירות לקוחות עם אינטראקציה קולית דמוית אדם וזרימת שיחה טבעיית.' },
+  'services.calls.detailed': { en: '<span class="text-black">Intelligent calling systems</span> that handle bookings, orders, and customer service calls <span class="text-black">with human-like voice interaction</span> and natural conversation flow.', he: 'מערכות שיחה חכמות המטפלות בהזמנות, פקודות ושיחות שירות לקוחות עם אינטראקציה קולית דמוית אדם וזרימת שיחה טבעיית.' },
   
   'services.leads.subtitle': { en: 'Intelligent Lead Processing', he: 'עיבוד לידים חכם' },
   'services.leads.detailed': { en: 'AI-powered lead qualification through <span class="text-black">smart questionnaires</span>, <span class="text-black">behavioral analysis</span>, and <span class="text-black">automated scoring</span> to identify your best prospects.', he: 'כישור לידים מבוסס בינה מלאכותית באמצעות שאלונים חכמים, ניתוח התנהגותי וניקוד אוטומטי כדי לזהות את הפרוספקטים הטובים ביותר שלך.' },
@@ -395,7 +395,7 @@ const translations: Translations = {
   // Contact Page
   'contact.badge': { en: 'Get In Touch', he: 'צור קשר' },
   'contact.title': { en: 'Let\'s discuss your automation needs', he: 'בואו נדבר על צרכי האוטומציה שלכם' },
-  'contact.description': { en: 'Choose the best way to connect with our team.', he: 'מוכנים לשנות את העסק שלכם עם אוטומציה חכמה? אנחנו כאן כדי לעזור לכם להתחיל. בחרו את הדרך הטובה ביותר להתחבר עם הצוות     שלנו.' },
+  'contact.description': { en: 'Choose the best way to connect with our team.', he: 'בחרו את הדרך הטובה ביותר להתחבר עם הצוות שלנו.' },
   
   // Contact Methods
   'contact.methods.title': { en: 'Get in Touch', he: 'צרו קשר' },
@@ -429,7 +429,7 @@ const translations: Translations = {
   
   // Service Options
   'contact.service.whatsapp': { en: 'AI WhatsApp Bot', he: 'בוט וואטסאפ בינה מלאכותית' },
-  'contact.service.calls': { en: 'AI Booking & Order Calls', he: 'שיחות הזמנה ובקשות בינה מלאכותית' },
+  'contact.service.calls': { en: 'AI Booking & Order Calls', he: 'שיחות הזמנות ופקודות בינה מלאכותית' },
   'contact.service.leads': { en: 'Lead Qualification Bots', he: 'בוטים לכישור לידים' },
   'contact.service.ads': { en: 'AI Ad Campaigns', he: 'קמפיינים פרסומיים בינה מלאכותית' },
   'contact.service.web': { en: 'Web Development', he: 'פיתוח אתרים' },

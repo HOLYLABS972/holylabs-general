@@ -7,7 +7,7 @@ export const HeaderSection = (): JSX.Element => {
   const { t } = useLanguage();
 
   const handleCallNow = () => {
-    window.location.href = "tel:+12362344580";
+    window.location.href = "tel:+972515473526";
   };
 
 

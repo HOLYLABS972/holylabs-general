@@ -54,9 +54,9 @@ const SocialProof: React.FC = () => {
               {t('social.badge')}
             </span>
           </div>
-          <h2 className="text-4xl md:text-5xl text-center whitespace-pre-line text-black">
+          <h1 className="text-4xl md:text-5xl text-center whitespace-pre-line mb-6 gradient-text">
             {t('social.title')}
-          </h2>
+          </h1>
           <p className="text-lg text-[#64646e] max-w-3xl mx-auto leading-relaxed">
             {t('social.description')}
           </p>

@@ -54,9 +54,9 @@ const ComprehensiveInsights: React.FC = () => {
               {t('insights.badge')}
             </span>
           </div>
-          <h2 className="text-4xl md:text-5xl text-center whitespace-pre-line text-black">
+          <h1 className="text-4xl md:text-5xl text-center whitespace-pre-line mb-6 gradient-text">
             {t('insights.title')}
-          </h2>
+          </h1>
           <p className="text-lg text-[#64646e] max-w-3xl mx-auto leading-relaxed">
             {t('insights.description')}
           </p>
@@ -82,7 +82,7 @@ const ComprehensiveInsights: React.FC = () => {
               >
                 <img 
                   src={feature.image}
-                  alt={feature.title}
+                  alt={feature.title as string}
                   className="w-full h-full object-cover"
                 />
               </div>

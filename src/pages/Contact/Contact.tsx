@@ -94,7 +94,7 @@ const Contact: React.FC = () => {
     {
       icon: <PhoneIcon className="w-6 h-6" />,
       title: t('contact.call.title'),
-      action: "tel:+12362344580"
+      action: "tel:+972515473526"
     },
     {
       icon: (
@@ -103,7 +103,7 @@ const Contact: React.FC = () => {
         </svg>
       ),
       title: t('contact.whatsapp.title'),
-      action: "https://wa.me/12362344580"
+      action: "https://wa.me/972515473526"
     },
     {
       icon: (
@@ -153,7 +153,7 @@ const Contact: React.FC = () => {
             </span>
           </div>
           
-          <h1 className="text-4xl md:text-5xl text-center bg-gradient-to-t from-black to-black/60 bg-clip-text text-transparent mb-6 leading-tight" style={{ lineHeight: '1.2', paddingBottom: '0.1em' }}>
+          <h1 className="text-4xl md:text-5xl text-center bg-gradient-to-t from-black to-black/60 bg-clip-text text-transparent mb-6 leading-tight gradient-text">
             {t('contact.title')}
           </h1>
           
@@ -191,11 +191,11 @@ const Contact: React.FC = () => {
                       boxShadow: 'rgba(141, 194, 235, 0.25) 0px -3px 0px 2px inset, rgba(16, 49, 77, 0.21) 0px 0.706592px 0.706592px -0.583333px, rgba(16, 49, 77, 0.2) 0px 1.80656px 1.80656px -1.16667px, rgba(16, 49, 77, 0.2) 0px 3.62176px 3.62176px -1.75px, rgba(16, 49, 77, 0.18) 0px 6.8656px 6.8656px -2.33333px, rgba(16, 49, 77, 0.16) 0px 13.6468px 13.6468px -2.91667px, rgba(16, 49, 77, 0.09) 0px 30px 30px -3.5px'
                     }}
                   >
-                    <div className="text-black group-hover:text-[#7597B6] transition-colors transition-all duration-300 group-hover:scale-110">
+                    <div className="text-black group-hover:text-[#7597B6] transition-colors transition-all duration-300 ">
                       {method.icon}
                     </div>
                   </div>
-                  <h3 className="text-lg font-semibold text-black ml-4 group-hover:text-[#7597B6] transition-colors transition-all duration-300">
+                  <h3 className="text-lg font-light text-black mx-4 group-hover:text-[#7597B6] transition-colors transition-all duration-300">
                     {method.title}
                   </h3>
                 </div>

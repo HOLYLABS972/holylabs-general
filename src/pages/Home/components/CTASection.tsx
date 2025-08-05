@@ -24,9 +24,9 @@ const CTASection: React.FC = () => {
             <div className="inline-flex items-center justify-center gap-1 px-4 py-2 bg-white/20 backdrop-blur-sm rounded-full mb-6 border border-white/30">
               <span className="font-medium text-white text-sm">{t('cta.badge')}</span>
             </div>
-            <h2 className="text-4xl md:text-5xl font-bold mb-6">
+            <h1 className="text-4xl md:text-5xl font-bold mb-6 gradient-text">
               {t('cta.title')}
-            </h2>
+            </h1>
             <p className="text-xl md:text-2xl mb-8 opacity-90 leading-relaxed">
               {t('cta.description')}
             </p>

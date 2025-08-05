@@ -82,9 +82,9 @@ const ServicesOverview: React.FC = () => {
           </div>
 
           {/* Main Title */}
-          <h2 className="text-4xl md:text-5xl text-center whitespace-pre-line text-black">
+          <h1 className="text-4xl md:text-5xl text-center whitespace-pre-line mb-6 gradient-text">
             {t('services.title')}
-          </h2>
+          </h1>
           
           {/* Description */}
           <p className="text-lg text-[#64646e] max-w-3xl mx-auto leading-relaxed">
