@@ -165,7 +165,7 @@ export const MetaPixel = {
   },
 
   // Track contact attempts
-  trackContactAttempt: (method: 'form' | 'email' | 'phone' | 'whatsapp') => {
+  trackContactAttempt: (method: 'form' | 'email' | 'phone' | 'whatsapp' | 'telegram') => {
     const eventData = {
       contact_method: method
     };

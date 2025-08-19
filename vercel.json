@@ -8,6 +8,9 @@
     },
     "api/tags.js": {
       "maxDuration": 10
+    },
+    "api/twitter-to-blog.js": {
+      "maxDuration": 30
     }
   },
   "headers": [

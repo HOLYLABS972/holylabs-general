@@ -1,11 +1,11 @@
-const { initializeApp } = require('firebase/app');
-const { 
+import { initializeApp } from 'firebase/app';
+import { 
   getFirestore, 
   collection, 
   addDoc, 
   serverTimestamp 
-} = require('firebase/firestore');
-const fetch = require('node-fetch');
+} from 'firebase/firestore';
+import fetch from 'node-fetch';
 
 // Firebase configuration
 const firebaseConfig = {
@@ -396,8 +396,8 @@ ${thread.tweets[5]?.text || 'אוטומציה של AI דורשת תשומת לב
   }
 }
 
-// Main handler function
-module.exports = async (req, res) => {
+// Main handler function for Vercel
+export default async function handler(req, res) {
   // Set CORS headers
   res.setHeader('Access-Control-Allow-Origin', '*');
   res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, OPTIONS');
@@ -566,4 +566,4 @@ module.exports = async (req, res) => {
       message: error.message
     });
   }
-};
+}

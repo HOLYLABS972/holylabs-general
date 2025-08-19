@@ -11,6 +11,7 @@ import { Button } from '../../components/ui/button';
 import { useLanguage } from '../../contexts/LanguageContext';
 import { db } from '../../lib/firebase';
 import { collection, addDoc, serverTimestamp } from 'firebase/firestore';
+import { MetaPixel } from '../../lib/metaPixel';
 
 const Contact: React.FC = () => {
   const { t, tString } = useLanguage();
@@ -66,6 +67,13 @@ const Contact: React.FC = () => {
       });
 
       if (response.ok) {
+        // Track successful form submission
+        MetaPixel.trackLead({
+          contact_method: 'form',
+          form_name: 'Contact Form',
+          service_interest: formData.service || 'General Inquiry'
+        });
+        
         setSubmitStatus('success');
         setFormData({
           name: '',
@@ -94,7 +102,9 @@ const Contact: React.FC = () => {
     {
       icon: <PhoneIcon className="w-6 h-6" />,
       title: t('contact.call.title'),
-      action: "tel:+972515473526"
+      action: "tel:+972515473526",
+      trackingMethod: 'phone' as const,
+      trackingName: 'Contact Phone'
     },
     {
       icon: (
@@ -103,7 +113,9 @@ const Contact: React.FC = () => {
         </svg>
       ),
       title: t('contact.whatsapp.title'),
-      action: "https://wa.me/972515473526"
+      action: "https://wa.me/972515473526",
+      trackingMethod: 'whatsapp' as const,
+      trackingName: 'Contact WhatsApp'
     },
     {
       icon: (
@@ -112,12 +124,16 @@ const Contact: React.FC = () => {
         </svg>
       ),
       title: t('contact.telegram.title'),
-      action: "https://t.me/holylabsbot"
+      action: "https://t.me/holylabsbot",
+      trackingMethod: 'telegram' as const,
+      trackingName: 'Contact Telegram'
     },
     {
       icon: <MessageSquareIcon className="w-6 h-6" />,
       title: t('contact.form.title'),
-      action: () => setShowFormPopup(true)
+      action: () => setShowFormPopup(true),
+      trackingMethod: 'form' as const,
+      trackingName: 'Contact Form'
     }
   ];
 
@@ -168,6 +184,10 @@ const Contact: React.FC = () => {
             <div
               key={index}
               onClick={() => {
+                // Track Facebook Pixel events
+                MetaPixel.trackButtonClick(method.trackingName, 'contact');
+                MetaPixel.trackContactAttempt(method.trackingMethod);
+                
                 if (typeof method.action === 'function') {
                   method.action();
                 } else {
@@ -195,7 +215,7 @@ const Contact: React.FC = () => {
                       {method.icon}
                     </div>
                   </div>
-                  <h3 className="text-lg font-light text-black mx-4 group-hover:text-[#7597B6] transition-colors transition-all duration-300">
+                  <h3 className="text-lg  text-black mx-4 group-hover:text-[#7597B6] transition-colors transition-all duration-300">
                     {method.title}
                   </h3>
                 </div>
