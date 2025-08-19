@@ -1,0 +1,159 @@
+{
+  "name": "Twitter to Blog - Facebook Messenger Integration",
+  "description": "Automatically convert Twitter threads to blog posts when sent via Facebook Messenger",
+  "scenario": {
+    "modules": [
+      {
+        "id": 1,
+        "module": "facebook-messenger:webhook",
+        "version": 1,
+        "parameters": {
+          "hook_events": ["messages"],
+          "hook_fields": ["message"]
+        },
+        "mapper": {},
+        "metadata": {
+          "designer": {
+            "x": 0,
+            "y": 0
+          }
+        }
+      },
+      {
+        "id": 2,
+        "module": "builtin:filter",
+        "version": 1,
+        "parameters": {},
+        "mapper": {
+          "condition": "{{contains(1.message.text; \"twitter.com\") OR contains(1.message.text; \"x.com\")}}"
+        },
+        "metadata": {
+          "designer": {
+            "x": 300,
+            "y": 0
+          }
+        }
+      },
+      {
+        "id": 3,
+        "module": "http:action",
+        "version": 3,
+        "parameters": {
+          "method": "POST",
+          "url": "https://your-domain.com/api/twitter-to-blog/webhook",
+          "headers": [
+            {
+              "name": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "qs": [],
+          "bodyType": "raw",
+          "parseResponse": true,
+          "timeout": 300
+        },
+        "mapper": {
+          "body": "{\n  \"twitterUrl\": \"{{1.message.text}}\",\n  \"language\": \"en\",\n  \"publishImmediately\": false,\n  \"source\": \"facebook-messenger\",\n  \"userId\": \"{{1.messaging.sender.id}}\",\n  \"timestamp\": \"{{formatDate(now; \"YYYY-MM-DDTHH:mm:ss.SSSZ\")}}\"\n}"
+        },
+        "metadata": {
+          "designer": {
+            "x": 600,
+            "y": 0
+          },
+          "restore": {
+            "method": {
+              "label": "POST"
+            },
+            "bodyType": {
+              "label": "Raw"
+            }
+          }
+        }
+      },
+      {
+        "id": 4,
+        "module": "facebook-messenger:send-message",
+        "version": 1,
+        "parameters": {},
+        "mapper": {
+          "recipient": "{{1.messaging.sender.id}}",
+          "message": {
+            "text": "🎉 Great! I've processed your Twitter thread and created a blog post draft.\n\n📝 Title: {{3.data.title.en}}\n🔗 URL: {{3.data.url}}\n📊 Status: {{3.data.status}}\n🐦 Source: @{{3.data.sourceThread.username}} ({{3.data.sourceThread.tweetCount}} tweets)\n\nYou can review and publish it in your admin panel!"
+          }
+        },
+        "metadata": {
+          "designer": {
+            "x": 900,
+            "y": 0
+          }
+        }
+      },
+      {
+        "id": 5,
+        "module": "facebook-messenger:send-message",
+        "version": 1,
+        "parameters": {},
+        "mapper": {
+          "recipient": "{{1.messaging.sender.id}}",
+          "message": {
+            "text": "❌ Sorry, I couldn't process that Twitter URL. Please make sure:\n\n• The URL is from twitter.com or x.com\n• It includes /status/ and a tweet ID\n• The thread is publicly accessible\n\nError: {{3.error}}"
+          }
+        },
+        "metadata": {
+          "designer": {
+            "x": 900,
+            "y": 150
+          }
+        }
+      }
+    ],
+    "connections": [
+      {
+        "id": 1,
+        "srcModuleId": 1,
+        "srcPort": "default",
+        "dstModuleId": 2,
+        "dstPort": "default"
+      },
+      {
+        "id": 2,
+        "srcModuleId": 2,
+        "srcPort": "default",
+        "dstModuleId": 3,
+        "dstPort": "default"
+      },
+      {
+        "id": 3,
+        "srcModuleId": 3,
+        "srcPort": "default",
+        "dstModuleId": 4,
+        "dstPort": "default"
+      },
+      {
+        "id": 4,
+        "srcModuleId": 3,
+        "srcPort": "error",
+        "dstModuleId": 5,
+        "dstPort": "default"
+      }
+    ]
+  },
+  "setup_instructions": [
+    "1. Replace 'https://your-domain.com' with your actual API domain",
+    "2. Configure Facebook Messenger webhook in module 1",
+    "3. Test with a sample Twitter URL",
+    "4. Monitor execution logs for any issues",
+    "5. Customize success/error messages as needed"
+  ],
+  "required_apps": [
+    "Facebook Messenger",
+    "HTTP"
+  ],
+  "estimated_operations": "1-2 per message",
+  "notes": [
+    "This scenario processes Twitter URLs sent via Facebook Messenger",
+    "Successfully processed threads create blog drafts in your admin panel",
+    "Error handling sends feedback to the user",
+    "You can modify the language and publishing settings in the HTTP module body"
+  ]
+}
